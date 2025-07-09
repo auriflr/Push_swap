@@ -16,6 +16,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(PRINTF) $(LIBFT)
 		$(CC) $(CFLAGS) -o $@ $^
+		@printf "\n\033[1A\033[K"
+		@printf "\033[0;32m$(NAME) compiled OK!\n"
+		@printf "\033[0;37m"
 
 $(PRINTF):
 			make -C $(PRINTF_DIR)
