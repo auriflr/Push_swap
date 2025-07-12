@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   rrotate.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
+/*   Created: 2025/07/10 08:47:10 by babyf             #+#    #+#             */
 /*   Updated: 2025/07/12 12:02:25 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define	PUSH_SWAP_H
+#include "../include/push_swap.h"
 
-#include "../include/libft.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
-
-typedef	struct 		s_node
+void	rrotate_a(t_stack *a)
 {
-	int				num;
-	struct s_node	*next;
-}					t_node;
 
-typedef struct		s_stack
+}
+
+void 	rrotate_b(t_stack *b)
 {
-	t_node			*top;
-	int				size;
-}					t_stack;
 
-/*Operations*/
-/*swap*/
+}
 
-
-#endif
+void	rrotate_r(t_stack *a, t_stack *b)
+{
+	
+}

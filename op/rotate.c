@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/09 16:46:54 by afloris           #+#    #+#             */
-/*   Updated: 2025/07/09 16:53:15 by afloris          ###   ########.fr       */
+/*   Created: 2025/07/10 08:46:53 by babyf             #+#    #+#             */
+/*   Updated: 2025/07/12 12:02:25 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	push_a()
+void	rotate_a(t_stack *a)
 {
-	
+
 }
 
-void	push_b()
+void	rotate_b(t_stack *b)
 {
-	
+
 }
 
-void	push_both()
+void	rotate_r(t_stack *a, t_stack *b)
 {
 	
 }

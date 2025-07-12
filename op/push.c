@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/07/12 12:02:25 by babyf            ###   ########.fr       */
+/*   Created: 2025/07/10 08:46:38 by babyf             #+#    #+#             */
+/*   Updated: 2025/07/10 16:16:06 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define	PUSH_SWAP_H
+#include "../include/push_swap.h"
 
-#include "../include/libft.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
-
-typedef	struct 		s_node
+void	push_a(t_stack *a, t_stack *b)
 {
-	int				num;
-	struct s_node	*next;
-}					t_node;
 
-typedef struct		s_stack
+}
+
+void	push_b(t_stack *a, t_stack *b)
 {
-	t_node			*top;
-	int				size;
-}					t_stack;
-
-/*Operations*/
-/*swap*/
-
-
-#endif
+	
+}
