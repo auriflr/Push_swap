@@ -6,12 +6,16 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:46:54 by afloris           #+#    #+#             */
-/*   Updated: 2025/07/13 12:24:51 by babyf            ###   ########.fr       */
+/*   Updated: 2025/07/13 12:27:24 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include "../include/ft_printf.h"
+
+/*Swap the first two elements of either stack a
+or stack b (or both). Does nothing if there's 
+only one element or none.*/
 
 /*Swap the first two elements of either stack a
 or stack b (or both). Does nothing if there's 

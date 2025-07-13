@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/07/12 12:02:25 by babyf            ###   ########.fr       */
+/*   Updated: 2025/07/12 15:21:50 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,11 @@ typedef	struct 		s_node
 
 typedef struct		s_stack
 {
-	t_node			*top;
 	int				size;
+	t_node			*top; 
 }					t_stack;
 
-/*Operations*/
-/*swap*/
+/*Operations and operation utils*/
 
 
 #endif
