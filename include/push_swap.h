@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/07/13 12:58:15 by babyf            ###   ########.fr       */
+/*   Updated: 2025/07/14 17:02:55 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@
 #include <stdio.h>
 #include <limits.h>
 
+/*the stack of numbers.*/
 typedef	struct 		s_node
 {
 	int				num;
 	struct s_node	*next;
 }					t_node;
 
+/*keeps track of size and top node
+list of different variables*/
 typedef struct		s_stack
 {
 	int				size;

@@ -3,21 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 08:46:38 by babyf             #+#    #+#             */
-/*   Updated: 2025/07/13 12:28:22 by babyf            ###   ########.fr       */
+/*   Updated: 2025/07/14 16:51:03 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include "../include/printf.h"
 
-/*take the first element of stack b and put it at the top of a.
-Do nothing if b is empty.*/
+/*take the first element of stack a and put it at the top of b.
+Do nothing if a is empty.*/
 
-/*take the first element of stack b and put it at the top of a.
-Do nothing if b is empty.*/
 
 void	push_a(t_stack *a, t_stack *b)
 {
@@ -35,9 +33,6 @@ void	push_a(t_stack *a, t_stack *b)
     push(a, value);
     ft_printf("pa\n");
 }
-
-/*take the first element of stack b and put it at the top of a.
-Do nothing if b is empty.*/
 
 /*take the first element of stack b and put it at the top of a.
 Do nothing if b is empty.*/
