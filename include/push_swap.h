@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/07/14 17:02:55 by afloris          ###   ########.fr       */
+/*   Updated: 2025/08/03 15:33:45 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@
 typedef	struct 		s_node
 {
 	int				num;
+	int				index;
 	struct s_node	*next;
+	struct s_node	*prev;
 }					t_node;
 
 /*keeps track of size and top node
