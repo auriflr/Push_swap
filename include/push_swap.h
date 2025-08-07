@@ -6,14 +6,15 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/08/03 15:33:45 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/07 19:34:04 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 #define	PUSH_SWAP_H
 
-#include "../include/libft.h"
+#include "../Libft/lib/libft.h"
+#include "../Libft/lib/ft_printf.h"
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -23,9 +24,7 @@
 typedef	struct 		s_node
 {
 	int				num;
-	int				index;
 	struct s_node	*next;
-	struct s_node	*prev;
 }					t_node;
 
 /*keeps track of size and top node
