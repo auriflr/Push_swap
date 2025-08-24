@@ -1,44 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 18:57:01 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/08 10:59:15 by babyf            ###   ########.fr       */
+/*   Created: 2025/08/08 10:43:04 by babyf             #+#    #+#             */
+/*   Updated: 2025/08/24 13:20:23 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	initialize(t_stack *a, t_stack *b)
-{
-	*a = init_stack(); //??
-	*b = init_stack();
-}
+/*some arguments not being integers, some arguments
+exceeding the integer limits, and/or the presence of duplicates.*/
 
-int	main(int ac, char **av)
+int		is_valid(int ac, char **av)
 {
-	t_node	*a;
-	t_node	*b;
+	int		i;
+	int		j;
 
-	a = NULL;
-	b = NULL;
-	if (ac == 1  || (ac == 2 && !av[1][0]))
-		return (1);
-	else if (ac == 2)
-		av = ft_split (av[1], ' ');
-	initialize(a, b);
-	if (!stack_sorted(a))
+	i = 1;
+	while (i < ac)
 	{
-		if (stack_len(a) == 2)
-			sa(a);
-		else if (stack_len(a) == 3)
-			sort_three(a);
-		else
-			sort_stacks(a, b);
+		j = 0;
+		if (av[i][j] == '-')
+			j++;
+		while (av[i][j])
+		{
+			if (!ft_isdigit(av[i][j]))
+				return (0);
+			j++;
+		}
+		i++;
 	}
-	free_stack(a);
-	return (0);
+	return (1);
+} 
+
+int		check_dup(int ac, char **av)
+{
+	int		i;
+	int		j;
+
+	i = 1;
+	
+
 }
