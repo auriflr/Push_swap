@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 19:02:59 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/07 19:34:04 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/24 18:01:36 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sort_three(t_stack *a)
 	int		n2;
 	int		n3;
 
-	if (!a || !a->top)
+	if (!a || !a->next)
 		return (NULL);
 	if (n1 > n2 && n2 < n3 && n1 > n3)
 		ra(a);
@@ -36,9 +36,4 @@ void	sort_three(t_stack *a)
 		sa(a);
 		ra(a);
 	}
-}
-
-void	stack_sorted(t_stack *stack)
-{
-	
 }

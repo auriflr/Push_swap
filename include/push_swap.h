@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/08/07 19:34:04 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/24 18:11:26 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,34 +20,18 @@
 #include <stdio.h>
 #include <limits.h>
 
-/*the stack of numbers.*/
-typedef	struct 		s_node
-{
-	int				num;
-	struct s_node	*next;
-}					t_node;
-
 /*keeps track of size and top node
 list of different variables*/
 typedef struct		s_stack
 {
-	int				size;
-	t_node			*top; 
+	int				num;
+	struct s_stack	*next;
+	struct s_stack	*prev; 
 }					t_stack;
 
 /*Operations and operation utils*/
-void	push_a(t_stack *a, t_stack *b);
-void	push_b(t_stack *a, t_stack *b);
-void	rotate_a(t_stack *a);
-void	rotate_b(t_stack *b);
-void	rotate_r(t_stack *a, t_stack *b);
-void	rrotate_a(t_stack *a);
-void 	rrotate_b(t_stack *b);
-void	rrotate_r(t_stack *a, t_stack *b);
-void	swap_a(t_stack *a);
-void	swap_b(t_stack *b);
-void	swap_r(t_stack *a, t_stack *b);
-int		pop(t_stack *stack);
-void	push(t_stack *stack, int value);
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
 
 #endif

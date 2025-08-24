@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 12:47:54 by babyf             #+#    #+#             */
-/*   Updated: 2025/03/31 17:37:39 by afloris          ###   ########.fr       */
+/*   Updated: 2025/08/24 18:11:38 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "../Libft/lib/ft_printf.h"
 
 void	ft_putptr(unsigned long ptr, int *count)
 {

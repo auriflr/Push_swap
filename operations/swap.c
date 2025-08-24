@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   swap_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 19:03:59 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/07 19:10:25 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/24 17:33:02 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	sa(t_stack *a)
 {
-	t_node	*tmp;
+	t_stack	*tmp;
 
-	if (!a || !a->top)
+	if (!a || !a->next)
 		return (NULL);
-	tmp = a->top->next;
-	a->top->next = tmp->next;
-	tmp->next = a->top;
-	a->top = tmp;
+	tmp = a->next->next;
+	a->next->next = tmp->next;
+	tmp->next = a->next;
+	a->next = tmp;
 	ft_printf("sa\n");
 }
 
 void	sb(t_stack *b)
 {
-	t_node	*tmp;
+	t_stack	*tmp;
 	
-	if (!b || b->top)
+	if (!b || b->next)
 		return (NULL);
-	tmp = b->top->next;
-	b->top->next = tmp->next;
-	tmp->next = a->top;
-	a->top = tmp;
+	tmp = b->next->next;
+	b->next->next = tmp->next;
+	tmp->next = b->next;
+	b->next = tmp;
 	ft_printf("sb\n");
 }
 

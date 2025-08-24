@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:32:49 by babyf             #+#    #+#             */
-/*   Updated: 2025/03/31 17:37:34 by afloris          ###   ########.fr       */
+/*   Updated: 2025/08/24 18:10:39 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "../Libft/lib/ft_printf.h"
 
 void	ft_putchr(int c, int *count)
 {
