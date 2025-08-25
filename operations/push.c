@@ -1,55 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 10:43:04 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/25 15:25:21 by babyf            ###   ########.fr       */
+/*   Created: 2025/08/25 13:08:11 by babyf             #+#    #+#             */
+/*   Updated: 2025/08/25 17:05:53 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int		check_valid(int ac, char **av)
+void	pa(t_stack *a, t_stack *b)
 {
-	int		i;
-	int		j;
+	int	value;
 
-	i = 1;
-	if (i < ac)
-	{
-		j = 0;
-		if (av[i][j] == '-')
-			j++;
-		while (av[i][j])
-		{
-			if (!ft_isdigit(av[i][j]))
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
+	// if (b->size < 1)
+		// return ;
+	value = pop (b);
+	push(a, value);
+	printf("pa\n");
 }
 
-int		check_dup(int ac, char **av)
+void	pb(t_stack *a, t_stack *b)
 {
-	int		i;
-	int		j;
+	int value;
 
-	i = 1;
-	if (i < ac)
-	{
-		j = i + 1;
-		while (av[i][j])
-		{
-			if (ft_atoi(av[i]) == ft_atoi(av[j]))
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
+	// if (a->size < 1)
+		// return ;
+	value = pop (a);
+	push (b, value);
+	printf("pb\n");
 }

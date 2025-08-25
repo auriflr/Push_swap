@@ -6,21 +6,24 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 18:57:01 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/24 18:11:19 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/25 15:50:11 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	initialize(t_stack **a, t_stack **b)
+{
+	*a = init_stack();
+	*b = init_stack();
+}
 
 int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
 
-	a = NULL;
-	b = NULL;
-	if (!a || a->next || ac == 2)
-		return ;
+	initialize(a, b);
 	
 	return (0);
 }

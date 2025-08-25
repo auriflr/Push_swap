@@ -1,55 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 10:43:04 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/25 15:25:21 by babyf            ###   ########.fr       */
+/*   Created: 2025/08/25 16:23:17 by babyf             #+#    #+#             */
+/*   Updated: 2025/08/25 17:05:53 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int		check_valid(int ac, char **av)
+void	push(t_stack *stack, int value)
 {
-	int		i;
-	int		j;
+	t_stack	*node;
 
-	i = 1;
-	if (i < ac)
-	{
-		j = 0;
-		if (av[i][j] == '-')
-			j++;
-		while (av[i][j])
-		{
-			if (!ft_isdigit(av[i][j]))
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
+	node = (t_stack *)malloc(sizeof(t_stack));
+	if (!node)
+		return ;
+	// node->num = value;
+	// node->next = stack->next;
+	// stack->next = node->next;
+	stack->size++;
 }
 
-int		check_dup(int ac, char **av)
+int	pop(t_stack *stack)
 {
-	int		i;
-	int		j;
+	int		value;
+	t_stack	*tmp;
 
-	i = 1;
-	if (i < ac)
-	{
-		j = i + 1;
-		while (av[i][j])
-		{
-			if (ft_atoi(av[i]) == ft_atoi(av[j]))
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
+	if (!stack || !stack->next)
+		return ;
+	// tmp = stack->next;
+	// value = tmp->num;
+	// stack->next = tmp->next;
+	// free (tmp);
+	stack->size--;
+	return (value);
 }
