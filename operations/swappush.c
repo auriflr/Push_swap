@@ -1,0 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swappush.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
+/*   Updated: 2025/08/26 16:11:33 by babyf            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/push_swap.h"
+
+/* swaps the first two elements of the stack
+does nothing if the stack is empty*/ 
+void	swap(t_stack **stack, int flag)
+{
+	t_stack	*first_node;
+	t_stack *second_node;
+
+	if (!*stack || !(*stack)->next)
+		return ;
+	first_node = *stack;
+	second_node = (*stack)->next;
+	first_node->next = second_node->next;
+	second_node->next = first_node;
+	*stack = second_node;
+	if (flag == 0)
+		ft_printf("sa\n");
+	if (flag == 1)
+		ft_printf("sb\n");
+}
+
+/* does both sa and s*/ 
+void	ss(t_stack **a, t_stack **b)
+{
+	swap(a, 2);
+	swap(a, 2);
+	ft_printf("ss\n");
+}
+
+void	push(t_stack **dst_stack, t_stack **src_stack, int flag)
+{
+	t_stack		*tmp;
+
+	if (!*src_stack)
+		return ;
+	tmp = *src_stack;
+	*src_stack = (*src_stack)->next;
+	tmp->next = *dst_stack;
+	*dst_stack = tmp;
+	if (flag == 0)
+		ft_printf("pa\n");
+	if (flag == 1)
+		ft_printf("pb\n");
+}
