@@ -6,12 +6,13 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:55:15 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/26 16:11:57 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/27 15:33:03 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/* the first element becomes the last one */ 
 void	rotate(t_stack **stack, int flag)
 {
 	t_stack *first_node;
@@ -35,10 +36,11 @@ void	rotate(t_stack **stack, int flag)
 void	rr(t_stack **a, t_stack **b)
 {
 	rotate(a, 2);
-	rotate(b, 2),
+	rotate(b, 2);
 	ft_printf("rr\n");
 }
 
+/* the last element becomes the first one */
 void	rev_rotate(t_stack **stack, int flag)
 {
 	t_stack		*last;

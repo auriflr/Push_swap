@@ -6,12 +6,13 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:59:35 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/26 16:24:53 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/27 16:19:39 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/* helper function to skip spaces and signs */
 void	skip_sign(const char *str, int *i, int *sign)
 {
 	while (str[*i] && str[*i] == ' ' || (str[*i] >= '\t' && str[*i] <= '\r'))
@@ -24,6 +25,7 @@ void	skip_sign(const char *str, int *i, int *sign)
 	}
 }
 
+/* converts a long int into a string */
 long	ft_atol(const char *str)
 {
 	int		i;
@@ -47,4 +49,11 @@ long	ft_atol(const char *str)
 		i++;
 	}
 	return (res * sign);
+}
+
+/* error message function (yes i know it doesn't belong in this file)*/
+void	error_msg(void)
+{
+	ft_printf("Error\n");
+	exit (1);
 }

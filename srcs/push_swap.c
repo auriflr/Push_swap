@@ -6,12 +6,13 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/26 16:11:29 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/27 12:34:33 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/* initializes the stack */ 
 t_stack	*init_stack(void)
 {
 	t_stack		*stack;
@@ -24,6 +25,7 @@ t_stack	*init_stack(void)
 	return (stack);
 }
 
+/* frees the stack */
 void	free_stack(t_stack *stack)
 {
 	t_stack		*tmp;

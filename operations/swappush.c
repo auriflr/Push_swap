@@ -6,14 +6,14 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/26 16:11:33 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/27 16:19:42 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /* swaps the first two elements of the stack
-does nothing if the stack is empty*/ 
+does nothing if the stack is empty */ 
 void	swap(t_stack **stack, int flag)
 {
 	t_stack	*first_node;
@@ -32,7 +32,7 @@ void	swap(t_stack **stack, int flag)
 		ft_printf("sb\n");
 }
 
-/* does both sa and s*/ 
+/* does both sa and sb */ 
 void	ss(t_stack **a, t_stack **b)
 {
 	swap(a, 2);
@@ -40,6 +40,7 @@ void	ss(t_stack **a, t_stack **b)
 	ft_printf("ss\n");
 }
 
+/* pushes the first element of the stack on top of the other stack */
 void	push(t_stack **dst_stack, t_stack **src_stack, int flag)
 {
 	t_stack		*tmp;

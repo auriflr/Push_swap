@@ -6,37 +6,38 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:50:02 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/26 16:26:53 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/27 16:19:44 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* pushes to stack the numbers from the input string
-WORK ON THIS*/
-void	push_to_stack(t_stack **stack, int value)
+/* assigns an index to the values, smallest index to smallest number */
+void	assign_index_values(t_stack **stack)
 {
-	t_stack	*new;
-	t_stack	*current;
+	
+}
 
-	new = (t_stack *)malloc(sizeof(t_stack));
-	if (!new)
-		return ;
-	/* assign values */ 
-	new->num = value;
-	new->next = NULL; 
-	if ((*stack)->next == NULL)
+/* fills the stack with the values parsed from the input string */
+void	fill_stack_values(t_stack **stack, char **av)
+{
+	int		i;
+	long	value;
+
+	i = 1;
+	while (av[i])
 	{
-		(*stack)->next = new;
+		value = ft_atol(av[i]);
+		if (value > 2147483648 || value < -2147483648)
+			error_msg();
+		/* a function to push to stack */
+		i++;
 	}
-	else 
-	{
-		current = (*stack)->next;
-		while (current->next != 0)
-		{
-			current = current->next;
-		}
-		current->next = new;
-	}
-	(*stack)->size++;
+}
+
+/* fills the stack with the input array */ 
+void	**fill_stack(t_stack **stack, char **av)
+{
+	fill_stack_values(stack, *av);
+	assign_index_values(stack);
 }
