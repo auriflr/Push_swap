@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/08/29 16:20:45 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/29 17:24:32 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,10 @@ void	rr(t_stack **a, t_stack **b);
 /* reverse rotate */ 
 
 /* Algorithm: Radix sort*/
-/* bubble sort function */
+void	bubble_sort(int *array, int size);
 
 /* Indexing */
+int		get_index(int *array, int value, int size);
 int		find_minindex(t_stack **a);
 int		find_maxindex(t_stack **b);
 void	min_to_top(t_stack **a, int min_index);
@@ -63,8 +64,8 @@ int		check_dup(int ac, char **av);
 int		check_sorted(int ac, char **av);
 
 /* Stack functions */
-t_stack	*init_stack(void);
 void	free_stack(t_stack *stack);
+t_stack	*init_stack(void);
 
 /* Stack to Array functions*/
 void	push_to_stack(t_stack **stack, int value);

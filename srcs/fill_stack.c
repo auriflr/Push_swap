@@ -1,16 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   fill_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:50:02 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/28 09:46:25 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/29 17:32:58 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+/* gets the index of a certain value and returns it if it's found.
+if it's not found, returns -1*/
+int		get_index(int *array, int value, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if (array[i] == value)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+/* pushes a new value at the end of the stack 
+this might cause issues, so keep an eye on it */
+void	push_to_stack(t_stack **stack, int value)
+{
+	t_stack	*new_last;
+	t_stack	*current;
+
+	new_last = (t_stack *)malloc(sizeof(t_stack));
+	if (!new_last)
+		return ;
+	new_last->num = value;
+	new_last->next = NULL;
+	if (*stack == NULL)
+	{
+		*stack = new_last;
+	}
+	else
+	{
+		current = *stack;
+		while (current->next != NULL)
+		{
+			current = current->next;
+		}
+		current->next = new_last;
+	}
+}
 
 /* assigns an index to the values, smallest index to smallest number */
 void	assign_index_values(t_stack **stack)
@@ -30,7 +73,7 @@ void	fill_stack_values(t_stack **stack, char **av)
 		value = ft_atol(av[i]);
 		if (value > 2147483648 || value < -2147483648)
 			error_msg();
-		/* a function to push to stack */
+		push_to_stack(stack, value);
 		i++;
 	}
 }

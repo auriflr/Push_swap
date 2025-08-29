@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   indexing.c                                         :+:      :+:    :+:   */
+/*   assign_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:48:39 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/29 16:20:28 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/29 17:14:12 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ void		min_to_top(t_stack **a, int min_index)
 	if (min_index <= size / 2)
 	{
 		while (min_index-- > 0)
-			rotate(*stack, 0);
+			rotate(a, 0);
 	}
 	else
 	{
 		min_index = size - min_index;
 		while (min_index-- > 0)
-			rev_rotate(*a, 0);
+			rev_rotate(a, 0);
 	}
 }
 
