@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:14:07 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/26 16:11:35 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/28 09:46:18 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*if there's a negative number, it skips it, 
 returns to prompt if there's a character that is not a digit (?)*/ 
-int		check_args(int ac, char **av)
+int		check_valid(int ac, char **av)
 {
 	int		i;
 	int		j;
@@ -36,7 +36,7 @@ int		check_args(int ac, char **av)
 	return (1);
 }
 
-/*checks for duplicates and behaves accordingly*/ 
+/* checks for duplicates and behaves accordingly */ 
 int		check_dup(int ac, char **av)
 {
 	int		i;
@@ -57,7 +57,30 @@ int		check_dup(int ac, char **av)
 	return (1);
 }
 
-int		is_valid()
+/* checks if the sorting is correct */
+int		check_sorted(int ac, char **av)
 {
-	
+	// int		i;
+
+	// i = 1;
+	// if (i < ac - 1)
+	// {
+	// 	if (ft_atoi(av[i]) > ft_atoi(av[i + 1]))
+	// 		return (0);
+	// 	i++;
+	// }
+	// return (1);
 }
+
+/* final check */
+// int		check_valid(int ac, char **av)
+// {
+// 	if (!check_valid(ac, av))
+// 		return (0);
+// 	if (!check_dup(ac, av))
+// 		return (0);
+// 	if (!check_sorted(ac, av))
+// 		return (0);
+// 	else
+// 		return (1);
+// }

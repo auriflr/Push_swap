@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/08/27 16:21:02 by babyf            ###   ########.fr       */
+/*   Updated: 2025/08/29 16:20:45 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,19 @@ void	rr(t_stack **a, t_stack **b);
 /* bubble sort function */
 
 /* Indexing */
-int		find_minindex(t_stack **stack);
-void		min_to_top(t_stack **stack, int min_index);
+int		find_minindex(t_stack **a);
+int		find_maxindex(t_stack **b);
+void	min_to_top(t_stack **a, int min_index);
+void	max_to_top(t_stack **b, int max_index);
+void	b_to_a(t_stack **a, t_stack **b);
 
 /* Parsing  and Error handling */
 void	skip_sign(const char *str, int *i, int *sign);
-long	ft_atol(const char *str);
-int		check_args(int ac, char **av);
-int		check_dup(int ac, char **av);
 void	error_msg(void);
+long	ft_atol(const char *str);
+int		check_valid(int ac, char **av);
+int		check_dup(int ac, char **av);
+int		check_sorted(int ac, char **av);
 
 /* Stack functions */
 t_stack	*init_stack(void);
