@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/09/02 11:11:42 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/02 14:45:17 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct		s_stack
 
 /* swap */ 
 void	swap(t_stack **stack, int flag);
-void	ss(t_stack *a, t_stack *b);
+void	ss(t_stack **a, t_stack **b);
 
 /* push */ 
 void	push(t_stack **dst_stack, t_stack **src_stack, int flag);
@@ -44,6 +44,8 @@ void	rotate(t_stack **stack, int flag);
 void	rr(t_stack **a, t_stack **b);
 
 /* reverse rotate */ 
+void	rev_rotate(t_stack **stack, int flag);
+void	rrr(t_stack **a, t_stack **b);
 
 /* Sorting small amounts of input numbers */
 void	sort_three(t_stack **a);
@@ -70,6 +72,7 @@ int		check_dup(int ac, char **av);
 int		check_sorted(int ac, char **av);
 int		is_sorted(t_stack **stack);
 int		final_check(int ac, char **av);
+int		is_valid(int ac, char **av);
 
 /* Stack functions */
 void	free_stack(t_stack *stack);

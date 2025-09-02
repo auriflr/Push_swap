@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:55:15 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/27 15:33:03 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/02 14:45:19 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,27 @@ void	rev_rotate(t_stack **stack, int flag)
 	t_stack		*last;
 	t_stack		*prev;
 	
+	if (!*stack || !(*stack)->next)
+		return ;
+	prev = NULL;
+	last = *stack;
+	while (last->next)
+	{
+		prev = last;
+		last = last->next;
+	}
+	prev->next = NULL;
+	last->next = *stack;
+	*stack = last;
+	if (flag == 0)
+		ft_printf("rra\n");
+	if (flag == 1)
+		ft_printf("rrb\n");
+}
+
+void	rrr(t_stack **a, t_stack **b)
+{
+	rev_rotate(a, 0);
+	rev_rotate(b, 0);
+	ft_printf("rss\n");
 }
