@@ -1,16 +1,68 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 15:59:35 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/27 16:19:39 by babyf            ###   ########.fr       */
+/*   Created: 2025/09/02 09:29:08 by babyf             #+#    #+#             */
+/*   Updated: 2025/09/02 09:53:09 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	sort_three(t_stack **a)
+{
+	int		n1;
+	int		n2;
+	int		n3;
+
+	if (!*a || !(*a)->next)
+		return (NULL);
+	if (n1 > n2 && n2 < n3 && n1 > n3)
+		rotate(a, 0);
+	else if (n1 > n2 && n2 > n3 && n1 > n3)
+		swap(a, 0);
+	else if(n1 < n2 && n2 > n3 && n1 > n3)
+		rev_rotate(a, 0);
+	else if (n1 < n2 && n2 > n3 && n3 > n1)
+	{
+		swap(a, 0);
+		rotate(a, 0);
+	}
+	else if (n1 > n2 && n2 < n3)
+	{
+		swap(a, 0);
+		rotate(a, 0);
+	}
+}
+
+void	sort_four(t_stack **a, t_stack **b)
+{
+	int	min_index;
+
+	min_index = find_minindex(a);
+	min_to_top(a, min_index);
+	push(a, b, 1);
+	sort_three(a);
+	push(a, b, 0);
+}
+
+void	sort_five(t_stack **a, t_stack **b)
+{
+	int	min_index;
+
+	min_index = find_minindex(a);
+	min_to_top(a, min_index);
+	push(a, b, 1);
+	min_index = find_minindex(a);
+	min_to_top(a, min_index);
+	push(a, b, 0);
+	sort_three(a);
+	push(a, b, 1);
+	push(a, b, 1);
+}
 
 /* helper function to skip spaces and signs */
 void	skip_sign(const char *str, int *i, int *sign)
@@ -49,11 +101,4 @@ long	ft_atol(const char *str)
 		i++;
 	}
 	return (res * sign);
-}
-
-/* error message function (yes i know it doesn't belong in this file)*/
-void	error_msg(void)
-{
-	ft_printf("Error\n");
-	exit (1);
 }

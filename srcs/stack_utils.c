@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_stack.c                                       :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:50:02 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/29 17:32:58 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/02 09:57:07 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,19 @@ void	push_to_stack(t_stack **stack, int value)
 /* assigns an index to the values, smallest index to smallest number */
 void	assign_index_values(t_stack **stack)
 {
-	
+	t_stack *tmp;
+	int		*array;
+	int		size;
+
+	size = (*stack)->size;
+	array = stack_to_array(stack);
+	tmp = *stack; /* or (*stack)->next if it doesn't work */
+	while (tmp)
+	{
+		tmp->num = get_index(array, tmp->num, size);
+		tmp = tmp->next; /* update the list */
+	}
+	free (array); /* check if it's allowed */
 }
 
 /* fills the stack with the values parsed from the input string */

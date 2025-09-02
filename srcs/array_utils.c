@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array.c                                            :+:      :+:    :+:   */
+/*   array_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:35:16 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/29 17:15:49 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/02 10:13:57 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* bubblesort algorithm function*/
+/* bubblesort algorithm function */
 void	bubble_sort(int *array, int size)
 {
 	int	i;
@@ -58,4 +58,23 @@ int	*stack_to_array(t_stack **a)
 		i++;
 	}
 	return (array);
+}
+
+void	fill_stack_string(t_stack **a, char *arg)
+{
+	char	**args;
+	int		i;
+
+	args = ft_split(arg, ' ');
+	if (!args)
+		return ;
+	i = 0;
+	while (args[i])
+	{
+		push_to_stack(a, ft_atoi(args[i]));
+		free (args[i]);
+		i++;
+	}
+	free (args);
+	assign_index_values(a);
 }

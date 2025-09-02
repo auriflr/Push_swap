@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/27 16:19:42 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/02 09:48:15 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,19 @@ void	push(t_stack **dst_stack, t_stack **src_stack, int flag)
 		ft_printf("pa\n");
 	if (flag == 1)
 		ft_printf("pb\n");
+}
+
+/* pushes every element of b to a, starting from the maximum index*/
+void	b_to_a(t_stack **a, t_stack **b)
+{
+	int	max_index;
+
+	while ((*b)->size > 0)
+	{
+		max_index = find_maxindex(a);
+		max_to_top(a, max_index);
+		push(a, b, 0);
+		if ((*a)->size && (*a)->next->num && (*a)->next->next->num) /* not so sure about this */
+			swap(a, 0);
+	}
 }

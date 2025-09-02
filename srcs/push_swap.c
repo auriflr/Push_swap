@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/27 12:34:33 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/02 11:21:52 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,21 @@ int		main(int ac, char **av)
 	t_stack		*a;
 	t_stack		*b;
 
-	/*check validity of the args and if the array is sorted*/ 
+	if (!is_valid(ac, av))
+	{
+		ft_printf("Error\n");
+		return (1);
+	}
 	a = init_stack ();
 	b = init_stack ();
-	/*fill the stack with the args given
-	execute the sorting*/
+	if (ac == 2)
+	{
+		fill_stack_string(a, av[1]);
+	}
+	else
+		fill_stack_values(a, av);
+	
+	/* execute the sorting */
 	free_stack(a);
 	free_stack(b);
 	return (0);

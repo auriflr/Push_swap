@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:48:39 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/29 17:14:12 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/02 10:13:55 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,17 +117,9 @@ void	max_to_top(t_stack **b, int max_index)
 		
 }
 
-/* pushes every element of b to a, starting from the maximum index*/
-void	b_to_a(t_stack **a, t_stack **b)
+/* error message function (yes i know it doesn't belong in this file)*/
+void	error_msg(void)
 {
-	int	max_index;
-
-	while ((*b)->size > 0)
-	{
-		max_index = find_maxindex(a);
-		max_to_top(a, max_index);
-		push(a, b, 0);
-		if ((*a)->size && (*a)->next->num && (*a)->next->next->num) /* not so sure about this */
-			swap(a, 0);
-	}
+	ft_printf("Error\n");
+	exit (1);
 }
