@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/09/02 14:45:17 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/05 15:04:13 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,22 +63,20 @@ void	min_to_top(t_stack **a, int min_index);
 void	max_to_top(t_stack **b, int max_index);
 
 /* Parsing  and Error handling */
-void	skip_sign(const char *str, int *i, int *sign);
 void	error_msg(void);
+void	skip_sign(const char *str, int *i, int *sign);
 long	ft_atol(const char *str);
 int		check_args(int ac, char **av);
 int		check_string(char *arg); 
 int		check_dup(int ac, char **av);
 int		check_sorted(int ac, char **av);
-int		is_sorted(t_stack **stack);
 int		final_check(int ac, char **av);
+int		is_sorted(t_stack **stack);
 int		is_valid(int ac, char **av);
 
 /* Stack functions */
 void	free_stack(t_stack *stack);
 t_stack	*init_stack(void);
-
-/* Array to Stack functions*/
 int		*stack_to_array(t_stack **a);
 void	push_to_stack(t_stack **stack, int value);
 void	assign_index_values(t_stack **stack);

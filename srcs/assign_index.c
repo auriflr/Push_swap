@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:48:39 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/02 10:13:55 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/05 16:31:39 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void		min_to_top(t_stack **a, int min_index)
 	}
 }
 
-/* finds the max_index in stack b */
+/* finds the max_index in stack (b) */
 int		find_maxindex(t_stack **b)
 {
 	int		i;
@@ -88,7 +88,7 @@ int		find_maxindex(t_stack **b)
 	return (max_index);
 }
 
-/* moves the max_index to the top of stack b */
+/* moves the max_index to the top of stack (b) */
 void	max_to_top(t_stack **b, int max_index)
 {
 	int		i;
