@@ -1,42 +1,52 @@
-NAME = push_swap
+# Compiler and flags
+CC := gcc
+CFLAGS := -Wall -Wextra -Werror -I$(INCDIR) -MMD -MP
 
-PRINTF_DIR = PRINTF_DIR
-LIBFT_DIR = Libft
-CC = gcc
-RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
-PRINTF = $(PRINTF_DIR)/printf.a
-LIBFT = $(LIBFT_DIR)/libft.a
+# Directories
+SRCDIRS := srcs parsing operations
+INCDIR := include
+OBJDIR := objs
+LIBFT_DIR := libft
+PRINTF_DIR := printf
 
-SRCS =
+# Target
+NAME := push_swap
 
-OBJS = $(SRCS:.c=.o)
+# Find all .c files
+SRCS := $(foreach dir, $(SRCDIRS), $(wildcard $(dir)/*.c))
+# Convert to object files in OBJDIR, preserving subdir structure
+OBJS := $(patsubst %.c, $(OBJDIR)/%.o, $(SRCS))
+DEPS := $(OBJS:.o=.d)
 
+# Default target
 all: $(NAME)
 
-$(NAME): $(OBJS) $(PRINTF) $(LIBFT)
-		$(CC) $(CFLAGS) -o $@ $^
-		@printf "\n\033[1A\033[K"
-		@printf "\033[0;32m$(NAME) compiled OK!\n"
-		@printf "\033[0;37m"
+# Link final binary
+$(NAME): $(OBJS)
+	@$(CC) $(CFLAGS) -o $@ $^
+	@printf "\n\033[1A\033[K"
+	@printf "\033[0;32m$(NAME) compiled OK!\n"
+	@printf "\033[0;37m"
 
-$(PRINTF):
-			make -C $(PRINTF_DIR)
+# Compile object files
+$(OBJDIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(LIBFT):
-			make -C $(LIBFT_DIR)
-
-%.o: %.c include/printf.h include/push_swap.h include/libft.h
-		$(CC) $(CFLAGS) -I include -c $< -o $@
-	
+# Clean
 clean:
-		$(RM) $(OBJS)
-		make -C $(PRINTF_DIR) $(LIBFT_DIR) clean
+	$(RM) -r $(OBJDIR)
+	$(MAKE) -C $(LIBFT_DIR) clean
+	$(MAKE) -C $(PRINTF_DIR) clean
 
 fclean: clean
-		$(RM) $(NAME)
-		make -C $(PRINTF_DIR) $(LIBFT_DIR) clean
+	$(RM) $(NAME)
+	$(MAKE) -C $(LIBFT_DIR) fclean
+	$(MAKE) -C $(PRINTF_DIR) fclean
 
 re: fclean all
 
 .PHONY: all clean fclean re
+
+# Include auto-generated dependencies
+-include $(DEPS)

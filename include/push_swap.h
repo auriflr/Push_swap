@@ -6,15 +6,15 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/09/05 15:04:13 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/09 15:32:17 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 #define	PUSH_SWAP_H
 
-#include "../Libft/lib/libft.h"
-#include "../Libft/lib/ft_printf.h"
+#include "../libft/lib/libft.h"
+#include "../libft/lib/ft_printf.h"
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
