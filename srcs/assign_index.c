@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:48:39 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/05 16:31:39 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/09 15:36:01 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,10 @@ void		min_to_top(t_stack **a, int min_index)
 /* finds the max_index in stack (b) */
 int		find_maxindex(t_stack **b)
 {
-	int		i;
 	int		max_value;
 	int		max_index;
 	t_stack	*current;
 
-	i = 0;
 	max_index = 0;
 	max_value = (*b)->num;
 	current = *b; /* or, if it doesn't work (*b)->next */
@@ -83,7 +81,7 @@ int		find_maxindex(t_stack **b)
 		}
 		else
 			current = current->next;
-		i++;
+		current++;
 	}
 	return (max_index);
 }
@@ -95,6 +93,7 @@ void	max_to_top(t_stack **b, int max_index)
 	int		moves;	
 
 	i = 0;
+	moves = 0;
 	if (!b || (*b)->size == 0 || max_index == -1)
 		return ;
 	if (max_index <= (*b)->size / 2)
@@ -108,7 +107,7 @@ void	max_to_top(t_stack **b, int max_index)
 	else
 	{
 		moves = (*b)->size - max_index;
-		while (i < max_index)
+		while (i < moves)
 		{
 			rev_rotate(b, 1);
 			i++;
