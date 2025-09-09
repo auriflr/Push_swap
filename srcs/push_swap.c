@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/05 16:31:39 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/09 15:00:43 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,24 @@ void	free_stack(t_stack *stack)
 	free (stack);
 }
 
+void	sort_stacks(t_stack **a, t_stack **b)
+{
+	if (is_sorted(a) || (*a)->size == 1)
+		error_msg(); /* not sure */
+	if ((*a)->size == 2)
+		swap(a, 0);
+	else if ((*a)-> size == 3)
+		sort_three(a);
+	else if ((*a)->size == 4)
+		sort_four(a, b);
+	else if ((*a)->size == 5)
+		sort_five(a, b);
+	else if ((*a)->size <= 100)
+		radix_sort(a, b, 5);
+	else
+		radix_sort(a, b, 11);
+}
+
 int		main(int ac, char **av)
 {
 	t_stack		*a;
@@ -61,8 +79,7 @@ int		main(int ac, char **av)
 		swap(a, 0);
 	else
 		fill_stack_values(a, av);
-	
-	/* execute the sorting */
+	sort_stacks(a, b);
 	free_stack(a);
 	free_stack(b);
 	return (0);
