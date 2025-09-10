@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/09 15:00:43 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/10 10:47:56 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_stack	*init_stack(void)
 
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack)
-		return ;
+		error_msg();
 	stack->next = NULL;
 	stack->size = 0;
 	return (stack);
@@ -54,9 +54,9 @@ void	sort_stacks(t_stack **a, t_stack **b)
 	else if ((*a)->size == 5)
 		sort_five(a, b);
 	else if ((*a)->size <= 100)
-		radix_sort(a, b, 5);
+		ft_radixsort(a, b, 5);
 	else
-		radix_sort(a, b, 11);
+		ft_radix_sort(a, b, 11);
 }
 
 int		main(int ac, char **av)
@@ -73,14 +73,14 @@ int		main(int ac, char **av)
 	b = init_stack ();
 	if (ac == 2)
 	{
-		fill_stack_string(a, av[1]);
+		fill_stack_string(&a, av[1]);
 	}
 	else if (ac == 3)
-		swap(a, 0);
+		swap(&a, 0);
 	else
-		fill_stack_values(a, av);
-	sort_stacks(a, b);
-	free_stack(a);
-	free_stack(b);
+		fill_stack_values(&a, av);
+	sort_stacks(&a, &b);
+	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }

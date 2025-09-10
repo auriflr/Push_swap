@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:53:53 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/09 14:59:53 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/10 10:46:42 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	splitnpush(t_stack **a, t_stack **b, int chunks)
 }
 
 /* executes radix_sort */
-void	radix_sort(t_stack **a, t_stack **b, int chunks)
+void	ft_radixsort(t_stack **a, t_stack **b, int chunks)
 {
 	int	size;
 
