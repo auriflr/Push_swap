@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/02 11:51:49 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/10 11:06:14 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	swap(t_stack **stack, int flag)
 void	ss(t_stack **a, t_stack **b)
 {
 	swap(a, 2);
-	swap(a, 2);
+	swap(b, 2);
 	ft_printf("ss\n");
 }
 

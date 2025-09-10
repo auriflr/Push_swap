@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/09/09 15:32:17 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/10 11:00:54 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,13 @@ void	sort_four(t_stack **a, t_stack **b);
 void	sort_five(t_stack **a, t_stack **b);
 
 /* Algorithm: Radix sort*/
-void	bubble_sort(int *array, int size);
+void		bubble_sort(int *array, int size);
+void		splitnpush(t_stack **a, t_stack **b, int chunks);
+void		ft_radixsort(t_stack **a, t_stack **b, int chunks);
+void		sort_stacks(t_stack **a, t_stack **b);
+// static int	find_target_index(t_stack **a, int min, int max);
+// static void	greedy_ra(t_stack **a, int index);
+// static void chunk_push_b(t_stack **a, t_stack **b, int min, int max);
 
 /* Indexing */
 int		get_index(int *array, int value, int size);
@@ -75,12 +81,12 @@ int		is_sorted(t_stack **stack);
 int		is_valid(int ac, char **av);
 
 /* Stack functions */
-void	free_stack(t_stack *stack);
-t_stack	*init_stack(void);
-int		*stack_to_array(t_stack **a);
+void	free_stack(t_stack **stack);
 void	push_to_stack(t_stack **stack, int value);
 void	assign_index_values(t_stack **stack);
 void	fill_stack_values(t_stack **stack, char **av);
 void	fill_stack_string(t_stack **a, char *arg);
+int		*stack_to_array(t_stack **a);
+t_stack	*init_stack(void);
 
 #endif

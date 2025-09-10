@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 09:45:28 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/02 11:44:39 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/10 11:05:52 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		is_sorted(t_stack **stack)
 int		is_valid(int ac, char **av)
 {
 	if (ac < 2)
-		return ;
+		return (0);
 	else if (ac == 2)
 	{
 		if (check_string(av[1]) == 0)
@@ -65,6 +65,5 @@ int		is_valid(int ac, char **av)
 		if (check_args(ac, av) == 0)
 			return (0);
 	}
-	else 
-		return (1);
+	return (1);
 }

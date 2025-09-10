@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/10 10:47:56 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/10 10:52:44 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@ t_stack	*init_stack(void)
 }
 
 /* frees the stack */
-void	free_stack(t_stack *stack)
+void	free_stack(t_stack **stack)
 {
 	t_stack		*tmp;
 
-	if (!stack)
+	if (!*stack)
 		return ;
-	while (stack->next)
+	while ((*stack)->next)
 	{
-		tmp = stack->next;
-		stack->next = stack->next->next;
+		tmp = (*stack)->next;
+		(*stack)->next = (*stack)->next->next;
 		free(tmp);
 	}
-	free (stack);
+	free (*stack);
 }
 
 void	sort_stacks(t_stack **a, t_stack **b)
@@ -56,7 +56,7 @@ void	sort_stacks(t_stack **a, t_stack **b)
 	else if ((*a)->size <= 100)
 		ft_radixsort(a, b, 5);
 	else
-		ft_radix_sort(a, b, 11);
+		ft_radixsort(a, b, 11);
 }
 
 int		main(int ac, char **av)

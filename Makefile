@@ -12,6 +12,9 @@ PRINTF_DIR := printf
 # Target
 NAME := push_swap
 
+LIBFT := $(LIBFT_DIR)/libft.a
+PRINTF := $(PRINTF_DIR)/libftprintf.a
+
 # Find all .c files
 SRCS := $(foreach dir, $(SRCDIRS), $(wildcard $(dir)/*.c))
 # Convert to object files in OBJDIR, preserving subdir structure
@@ -19,11 +22,11 @@ OBJS := $(patsubst %.c, $(OBJDIR)/%.o, $(SRCS))
 DEPS := $(OBJS:.o=.d)
 
 # Default target
-all: $(NAME)
+all: $(LIBFT) $(PRINTF) $(NAME)
 
 # Link final binary
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) -o $@ $^
+	@$(CC) $(CFLAGS) -o $@ $^ $(LIBFT) $(PRINTF)
 	@printf "\n\033[1A\033[K"
 	@printf "\033[0;32m$(NAME) compiled OK!\n"
 	@printf "\033[0;37m"
@@ -32,6 +35,14 @@ $(NAME): $(OBJS)
 $(OBJDIR)/%.o: %.c
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -c $< -o $@
+
+# Build libft
+$(LIBFT):
+	@$(MAKE) -C $(LIBFT_DIR)
+
+# Build printf
+$(PRINTF):
+	@$(MAKE) -C $(PRINTF_DIR)
 
 # Clean
 clean:

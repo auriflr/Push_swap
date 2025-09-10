@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:29:08 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/02 09:53:09 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/10 10:58:33 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ void	sort_three(t_stack **a)
 	int		n2;
 	int		n3;
 
+	n1 = 0;
+	n2 = 0;
+	n3 = 0;
 	if (!*a || !(*a)->next)
-		return (NULL);
+		return ;
 	if (n1 > n2 && n2 < n3 && n1 > n3)
 		rotate(a, 0);
 	else if (n1 > n2 && n2 > n3 && n1 > n3)
@@ -67,12 +70,12 @@ void	sort_five(t_stack **a, t_stack **b)
 /* helper function to skip spaces and signs */
 void	skip_sign(const char *str, int *i, int *sign)
 {
-	while (str[*i] && str[*i] == ' ' || (str[*i] >= '\t' && str[*i] <= '\r'))
+	while ((str[*i] && str[*i] == ' ') || (str[*i] >= '\t' && str[*i] <= '\r'))
 		(*i)++;
 	while (str[*i] == '-' || str[*i] == '+')
 	{
 		if (str[*i] == '-')
-			sign = -1;
+			*sign = -1;
 		(*i)++;
 	}
 }

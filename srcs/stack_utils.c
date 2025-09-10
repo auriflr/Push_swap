@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:50:02 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/09 15:32:39 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/10 11:01:06 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void	fill_stack_values(t_stack **stack, char **av)
 /* fills the stack with the input array */ 
 void	**fill_stack(t_stack **stack, char **av)
 {
-	fill_stack_values(stack, *av);
+	fill_stack_values(stack, av);
 	assign_index_values(stack);
+	return (0);
 }
