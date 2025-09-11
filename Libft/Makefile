@@ -11,6 +11,7 @@ SRCS := $(foreach dir, $(SRC_DIRS), $(wildcard $(dir)/*.c))
 OBJS := $(SRCS:.c=.o)
 	
 .c.o:
+	@mkdir -p $(dir $@)
 	${CC} ${CFLAGS} -c $< -o $@
 	
 $(NAME): ${OBJS}

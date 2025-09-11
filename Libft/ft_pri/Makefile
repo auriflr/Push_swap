@@ -16,6 +16,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c $(INCDIR)ft_printf.h
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -I $(INCDIR) -c $< -o $@
 
 clean:
