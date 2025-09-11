@@ -37,18 +37,17 @@ $(PRINTF):
 	@printf "\033[0;37m 👾$(TITLE) in progress... %-33.33s\r" $@
 	@$(MAKE) -C $(PRINTF_DIR) -s --no-print-directory
 
-# Clean
 clean:
 	$(RM) -r $(OBJDIR)
-	$(MAKE) -C $(LIBFT_DIR) clean -s --no-print-directory
-	$(MAKE) -C $(PRINTF_DIR) clean -s --no-print-directory
+	$(MAKE) -C $(LIBFT_DIR) clean 
+	$(MAKE) -C $(PRINTF_DIR) clean 
 	@printf "\033[0;31m$(TITLE) 👾cleaned!👾\n"
 	@printf "\033[0;37m"
 
 fclean: clean
-	$(RM) $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) fclean -s --no-print-directory
-	$(MAKE) -C $(PRINTF_DIR) fclean -s --no-print-directory
+	$(RM) $(NAME) 
+	$(MAKE) -C $(LIBFT_DIR) fclean 
+	$(MAKE) -C $(PRINTF_DIR) fclean
 	@printf "\033[0;34m$(TITLE) 👾removed!👾\n"
 	@printf "\033[0;37m"
 
