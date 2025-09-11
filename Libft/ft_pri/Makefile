@@ -4,8 +4,10 @@ CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
+SRCDIR = ft_pri
+INCDIR = lib
 
-SRCS = src/ft_printf.c src/ft_printf_utils.c
+SRCS = $(SRCDIR)/ft_printf.c $(SRCDIR)ft_printf_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -14,8 +16,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c include/ft_printf.h
-	$(CC) $(CFLAGS) -I include -c $< -o $@
+%.o: %.c $(INCDIR)ft_printf.h
+	$(CC) $(CFLAGS) -I $(INCDIR) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

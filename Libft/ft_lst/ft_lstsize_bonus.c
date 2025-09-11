@@ -6,11 +6,11 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 16:22:44 by afloris           #+#    #+#             */
-/*   Updated: 2025/08/25 14:58:22 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/11 14:48:48 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../lib/libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

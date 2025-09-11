@@ -6,11 +6,11 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:20:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/02 12:33:32 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/11 14:48:48 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../lib/libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {

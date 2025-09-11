@@ -6,11 +6,11 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 14:14:03 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/22 12:05:43 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/11 14:48:48 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../lib/libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

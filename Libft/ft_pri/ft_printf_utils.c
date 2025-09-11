@@ -6,11 +6,11 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:32:49 by babyf             #+#    #+#             */
-/*   Updated: 2025/08/24 18:10:39 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/11 14:49:29 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/lib/ft_printf.h"
+#include "../lib/ft_printf.h"
 
 void	ft_putchr(int c, int *count)
 {
