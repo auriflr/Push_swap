@@ -4,10 +4,9 @@ CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
-SRCDIR = ft_pri
-INCDIR = lib
+INCDIR = ../lib
 
-SRCS = $(SRCDIR)/ft_printf.c $(SRCDIR)ft_printf_utils.c
+SRCS = ft_printf.c ft_printf_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
