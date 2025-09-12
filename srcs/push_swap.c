@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/12 16:32:20 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/12 16:51:37 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int		main(int ac, char **av)
 		fill_stack_string(&a, av[1]);
 	else
 		fill_stack_values(&a, av);
+	update_stack_size(&a);
 	sort_stacks(&a, &b);
 	free_stack(&a);
 	free_stack(&b);
