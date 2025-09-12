@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/09/11 14:50:13 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/12 15:07:14 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ typedef struct		s_stack
 /* Operations and operation utils */
 
 /* swap */ 
-void	swap(t_stack **stack, int flag);
+// void	swap(t_stack **stack, int flag);
 void	ss(t_stack **a, t_stack **b);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
 
 /* push */ 
 void	push(t_stack **dst_stack, t_stack **src_stack, int flag);

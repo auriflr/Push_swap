@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:50:02 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/12 14:47:55 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/12 14:59:30 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	push_to_stack(t_stack **stack, int value)
 	t_stack	*new_last;
 	t_stack	*current;
 
-	new_last = (t_stack *)malloc(sizeof(t_stack));
+	new_last = (t_stack *)malloc(sizeof(t_stack)); /* pontetial issue ??*/
 	if (!new_last)
 		return ;
 	new_last->num = value;
