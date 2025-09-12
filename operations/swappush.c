@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/10 11:06:14 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/12 14:50:53 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ void	swap(t_stack **stack, int flag)
 	first_node->next = second_node->next;
 	second_node->next = first_node;
 	*stack = second_node;
+	/* the problem is not the flag */
 	if (flag == 0)
 		ft_printf("sa\n");
-	if (flag == 1)
+	else if (flag == 1)
 		ft_printf("sb\n");
 }
 

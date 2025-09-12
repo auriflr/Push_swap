@@ -1,14 +1,12 @@
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror 
 
-# Directories
 SRCDIRS := srcs parsing operations
 INCDIR := include
 OBJDIR := objs
 LIBFT_DIR := libft
 PRINTF_DIR := libft/ft_pri
 
-# Target
 NAME := push_swap
 
 LIBFT := $(LIBFT_DIR)/libft.a

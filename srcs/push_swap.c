@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/11 16:01:18 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/12 14:47:46 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	sort_stacks(t_stack **a, t_stack **b)
 {
 	if (is_sorted(a) || (*a)->size == 1)
 		error_msg(); /* not sure */
+	/* seg fault when passing a sorted string */
 	if ((*a)->size == 2)
 		swap(a, 0);
 	else if ((*a)-> size == 3)

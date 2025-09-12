@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:55:15 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/02 14:45:19 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/12 14:47:56 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,5 @@ void	rrr(t_stack **a, t_stack **b)
 {
 	rev_rotate(a, 0);
 	rev_rotate(b, 0);
-	ft_printf("rss\n");
+	ft_printf("rrr\n");
 }

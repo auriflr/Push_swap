@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:53:53 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/10 10:46:42 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/12 14:49:09 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	find_target_index(t_stack **a, int min, int max)
 	t_stack	*current;
 
 	index = 0;
-	current = *a; /* or (*a)->next if something goes wrong*/
+	current = (*a)->next; /* or (*a)->next if something goes wrong*/
 	while (current)
 	{
 		if (current->num >= min && current->num <= max)
@@ -104,6 +104,7 @@ void	splitnpush(t_stack **a, t_stack **b, int chunks)
 }
 
 /* executes radix_sort */
+/* this doesn't print */
 void	ft_radixsort(t_stack **a, t_stack **b, int chunks)
 {
 	int	size;
