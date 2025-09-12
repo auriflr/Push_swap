@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:53:53 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/12 16:27:30 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/12 16:52:33 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	find_target_index(t_stack **a, int min, int max)
 	t_stack	*current;
 
 	index = 0;
-	current = (*a)->next; /* or (*a)->next if something goes wrong*/
+	current = (*a)->next;
 	while (current)
 	{
 		if (current->num >= min && current->num <= max)
