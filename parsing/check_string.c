@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 09:45:28 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/12 15:14:51 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/12 16:27:38 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,18 @@ int		check_string(char *arg)
 	return (dgt);
 }
 
-int		is_sorted(t_stack **stack)
+int	is_sorted(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	tmp = *stack; /* or (*stack)->next if it doesn't work */
-	while (tmp)
+	if (!stack || !(*stack))
+		return (1);
+	/* empty stack is considered sorted ??*/
+	tmp = *stack;
+	while (tmp->next)
 	{
-		if (tmp->num > tmp->next->num) /* or tmp->num->next if it doesn't work */
-			return (0);
+		if (tmp->num > tmp->next->num)
+			return (0); 
 		tmp = tmp->next;
 	}
 	return (1);

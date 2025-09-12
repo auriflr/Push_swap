@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:35:16 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/10 11:08:43 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/12 16:16:40 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,20 @@ maybe it can be done with a costum version of str_cpy */
 int	*stack_to_array(t_stack **a)
 {
 	int		i;
+	int		size;
 	int		*array;
 	t_stack	*current;
 
-	array = (int *)malloc(sizeof(int) * (*a)->size);
+	size = stack_size(a);
+	array = (int *)malloc(sizeof(int) * size);
 	if (!array)
 		return (NULL);
 	i = 0;
-	current = *a; /* or (*a)->next if it doesn't work */
-	while (current)
+	current = *a;
+	while (current && i < size)
 	{
-		/* copying the numbers from array to stack */
-		array[i] = current->num;
+		array[i++] = current->num;
 		current = current->next;
-		i++;
 	}
 	return (array);
 }

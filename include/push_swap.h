@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/09/12 15:07:14 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/12 16:27:37 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,8 @@ typedef struct		s_stack
 /* Operations and operation utils */
 
 /* swap */ 
-// void	swap(t_stack **stack, int flag);
+void	swap(t_stack **stack, int flag);
 void	ss(t_stack **a, t_stack **b);
-void	sa(t_stack **a);
-void	sb(t_stack **b);
 
 /* push */ 
 void	push(t_stack **dst_stack, t_stack **src_stack, int flag);
@@ -59,9 +57,6 @@ void		bubble_sort(int *array, int size);
 void		splitnpush(t_stack **a, t_stack **b, int chunks);
 void		ft_radixsort(t_stack **a, t_stack **b, int chunks);
 void		sort_stacks(t_stack **a, t_stack **b);
-// static int	find_target_index(t_stack **a, int min, int max);
-// static void	greedy_ra(t_stack **a, int index);
-// static void chunk_push_b(t_stack **a, t_stack **b, int min, int max);
 
 /* Indexing */
 int		get_index(int *array, int value, int size);
@@ -82,7 +77,8 @@ int		final_check(int ac, char **av);
 int		is_sorted(t_stack **stack);
 int		is_valid(int ac, char **av);
 
-/* Stack functions */
+/* Stack utilitary functions */
+int		stack_size(t_stack **stack);
 void	free_stack(t_stack **stack);
 void	push_to_stack(t_stack **stack, int value);
 void	assign_index_values(t_stack **stack);
