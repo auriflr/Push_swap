@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/12 16:41:08 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/15 15:53:24 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	swap(t_stack **stack, int flag)
 	first_node->next = second_node->next;
 	second_node->next = first_node;
 	*stack = second_node;
-	/* the problem is not the flag */
 	if (flag == 0)
 		ft_printf("sa\n");
 	else if (flag == 1)
@@ -69,7 +68,7 @@ void	b_to_a(t_stack **a, t_stack **b)
 		max_index = find_maxindex(a);
 		max_to_top(a, max_index);
 		push(a, b, 0);
-		if ((*a)->size && (*a)->next->num && (*a)->next->next->num) /* not so sure about this */
+		if ((*a)->size && (*a)->next->num && (*a)->next->next->num)
 			swap(a, 0);
 	}
 }

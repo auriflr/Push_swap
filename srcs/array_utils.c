@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:35:16 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/12 16:53:41 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/15 15:43:25 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ void	bubble_sort(int *array, int size)
 	}
 }
 
-/* moves the input string into stack a 
-maybe it can be done with a costum version of str_cpy */
+/* moves the input string into stack a */
 int	*stack_to_array(t_stack **a)
 {
 	int		i;

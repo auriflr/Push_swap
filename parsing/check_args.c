@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:14:07 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/10 11:01:48 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/15 15:35:54 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ int		check_args(int ac, char **av)
 	int		j;
 
 	i = 1;
-	if (i < ac)
+	while (i < ac)
 	{
 		j = 0;
-		if (av[i][j] == '-')
+		if (av[i][j] == '\0')
+			return (0);
+		if (av[i][j] == '+' || av[i][j] == '-')
 			j++;
 		while (av[i][j])
 		{
@@ -83,6 +85,5 @@ int		final_check(int ac, char **av)
 		return (0);
 	if (!check_sorted(ac, av))
 		return (0);
-	else
-		return (1);
+	return (1);
 }

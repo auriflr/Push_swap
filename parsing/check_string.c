@@ -6,53 +6,11 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 09:45:28 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/12 16:27:38 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/15 15:27:55 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-/* checks the input string for valid characters */
-int		check_string(char *arg)
-{
-	int	i;
-	int	dgt;
-
-	i = 0;
-	dgt = 0;
-	while (arg[i])
-	{
-		if (arg[i] == '-')
-		{
-			if (arg[i + 1] && !ft_isdigit(arg[i + 1]))
-				return (0);
-			i++;
-		}
-		if (ft_isdigit(arg[i]))
-			dgt = 1;
-		else if (arg[i] != ' ')
-			return (0);
-		i++;
-	}
-	return (dgt);
-}
-
-int	is_sorted(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	if (!stack || !(*stack))
-		return (1);
-	/* empty stack is considered sorted ??*/
-	tmp = *stack;
-	while (tmp->next)
-	{
-		if (tmp->num > tmp->next->num)
-			return (0); 
-		tmp = tmp->next;
-	}
-	return (1);
-}
 
 int		is_valid(int ac, char **av)
 {
@@ -67,6 +25,49 @@ int		is_valid(int ac, char **av)
 	{
 		if (check_args(ac, av) == 0)
 			return (0);
+	}
+	return (1);
+}
+
+/* checks the input string for valid characters */
+int		check_string(char *arg)
+{
+	int	i;
+	int	dgt;
+
+	i = 0;
+	dgt = 0;
+	while (arg[i])
+	{
+		if (arg[i] == '-')
+		{
+			if (arg[i + 1] || !ft_isdigit(arg[i + 1]))
+				return (0);
+			i++;
+		}
+		if (ft_isdigit(arg[i]))
+			dgt = 1;
+		else if (arg[i] != ' ')
+			return (0);
+		i++;
+	}
+	return (dgt);
+}
+
+
+int	is_sorted(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	if (!stack || !(*stack))
+		return (1);
+	/* empty stack is considered sorted ??*/
+	tmp = *stack;
+	while (tmp->next)
+	{
+		if (tmp->num > tmp->next->num)
+			return (0); 
+		tmp = tmp->next;
 	}
 	return (1);
 }

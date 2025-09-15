@@ -6,13 +6,12 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:29:08 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/12 16:32:19 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/12 18:00:35 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* this doesn't print */
 void	sort_three(t_stack **a)
 {
 	int		n1;
@@ -42,7 +41,6 @@ void	sort_three(t_stack **a)
 	}
 }
 
-/* this doesn't print */
 void	sort_four(t_stack **a, t_stack **b)
 {
 	int	min_index;
@@ -54,7 +52,6 @@ void	sort_four(t_stack **a, t_stack **b)
 	push(a, b, 0);
 }
 
-/* this doesn't print */
 void	sort_five(t_stack **a, t_stack **b)
 {
 	int	min_index;
