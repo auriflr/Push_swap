@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/15 15:47:53 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/15 16:10:39 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,20 @@ void	free_stack(t_stack **stack)
 
 void	sort_stacks(t_stack **a, t_stack **b)
 {
+	int	size;
+
+	size = stack_size (a);
 	if (is_sorted(a) || (*a)->size == 1)
 		return ;
-	else if ((*a)->size == 2)
+	else if (size == 2)
 		swap(a, 0);
-	else if ((*a)->size == 3)
+	else if (size == 3)
 		sort_three(a);
-	else if ((*a)->size == 4)
+	else if (size == 4)
 		sort_four(a, b);
-	else if ((*a)->size == 5)
+	else if (size == 5)
 		sort_five(a, b);
-	else if ((*a)->size <= 100)
+	else if (size <= 100)
 		ft_radixsort(a, b, 5);
 	else
 		ft_radixsort(a, b, 11);
