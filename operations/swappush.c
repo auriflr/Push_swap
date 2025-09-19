@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/15 15:53:24 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/19 16:07:42 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ void	b_to_a(t_stack **a, t_stack **b)
 {
 	int	max_index;
 
-	while ((*b)->size > 0)
+	while (stack_size(b) > 0)
 	{
 		max_index = find_maxindex(a);
 		max_to_top(a, max_index);
 		push(a, b, 0);
-		if ((*a)->size && (*a)->next->num && (*a)->next->next->num)
+		if (stack_size(a) && (*a)->next && (*a)->next->next)
 			swap(a, 0);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:53:53 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/12 16:52:33 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/19 15:59:37 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void chunk_push_b(t_stack **a, t_stack **b, int min, int max)
 		{
 			push(a, b, 1);
 			moves++;
-			if ((*b)->size > 1 && (*b)->num < mid)
+			if (*b && stack_size(b) > 1 && (*b)->num < mid)
 				rotate(b, 1);
 		}
 		else
