@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:48:39 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/09 15:36:01 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/19 16:34:32 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int		find_minindex(t_stack **a)
 			min_value = current->num;
 			min_index = i;
 		}
-		else
-			current = current->next;
+		/*else*/
+		current = current->next;
 		i++;
 	}
 	return (min_index);
@@ -48,7 +48,7 @@ void		min_to_top(t_stack **a, int min_index)
 
 	if (min_index == -1)
 		return ;
-	size = (*a)->size;
+	size = stack_size(a);
 	if (min_index <= size / 2)
 	{
 		while (min_index-- > 0)
@@ -65,10 +65,12 @@ void		min_to_top(t_stack **a, int min_index)
 /* finds the max_index in stack (b) */
 int		find_maxindex(t_stack **b)
 {
+	int		i;
 	int		max_value;
 	int		max_index;
 	t_stack	*current;
 
+	i = 0;
 	max_index = 0;
 	max_value = (*b)->num;
 	current = *b; /* or, if it doesn't work (*b)->next */
@@ -77,11 +79,11 @@ int		find_maxindex(t_stack **b)
 		if (current->num > max_value)
 		{
 			max_value = current->num;
-			max_index = 0;
+			max_index = i;
 		}
-		else
-			current = current->next;
-		current++;
+		/*else*/
+		current = current->next;
+		i++;
 	}
 	return (max_index);
 }
@@ -94,9 +96,9 @@ void	max_to_top(t_stack **b, int max_index)
 
 	i = 0;
 	moves = 0;
-	if (!b || (*b)->size == 0 || max_index == -1)
+	if (!b || stack_size(b) == 0 || max_index == -1)
 		return ;
-	if (max_index <= (*b)->size / 2)
+	if (max_index <= stack_size(b) / 2)
 	{
 		while (i < max_index)
 		{
@@ -106,7 +108,7 @@ void	max_to_top(t_stack **b, int max_index)
 	}
 	else
 	{
-		moves = (*b)->size - max_index;
+		moves = stack_size(b) - max_index;
 		while (i < moves)
 		{
 			rev_rotate(b, 1);

@@ -6,23 +6,27 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/15 16:10:39 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/19 17:05:59 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* initializes the stack */ 
-t_stack	*init_stack(void)
+/* initializes the stack keeping in mind the sentil node at the beginning*/ 
+void	init_stack(t_stack **stack)
 {
-	t_stack		*stack;
+	t_stack		*sentinel;
 
-	stack = (t_stack *)malloc(sizeof(t_stack));
-	if (!stack)
-		error_msg();
-	stack->next = NULL;
-	stack->size = 0;
-	return (stack);
+	sentinel = (t_stack *)malloc(sizeof(t_stack));
+	if (!sentinel)
+	{
+		ft_printf("Error\n");
+		exit(EXIT_FAILURE);
+	}
+	sentinel->num = 0;
+	sentinel->next = NULL;
+	sentinel->size = 0;
+	*stack = sentinel;
 }
 
 /* frees the stack */
@@ -67,13 +71,15 @@ int		main(int ac, char **av)
 	t_stack		*a;
 	t_stack		*b;
 
+	a = NULL;
+	b = NULL;
 	if (!is_valid(ac, av))
 	{
 		ft_printf("Error\n");
 		exit(EXIT_FAILURE);
 	}
-	a = init_stack ();
-	b = init_stack ();
+	init_stack (&a);
+	init_stack (&b);
 	if (ac == 2)
 		fill_stack_string(&a, av[1]);
 	else

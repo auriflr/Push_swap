@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:50:02 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/15 16:08:57 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/19 17:11:45 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,26 +35,33 @@ void	push_to_stack(t_stack **stack, int value)
 	t_stack	*new_last;
 	t_stack	*current;
 
+	if (!stack || !(*stack))
+		return ;
 	new_last = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_last)
 		return ;
 	new_last->num = value;
 	new_last->next = NULL;
 	new_last->size = 1;
-	if (*stack == NULL)
+	current = *stack;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = new_last;
+	(*stack)->size += 1;
+	/*if (*stack == NULL)
 	{
 		*stack = new_last;
 	}
 	else
 	{
-		current = *stack;
+		current = (*stack)->next;
 		while (current->next != NULL)
 		{
 			current = current->next;
 		}
 		current->next = new_last;
 		(*stack)->size += 1;
-	}
+	}*/
 }
 
 /* assigns an index to the values, smallest index to smallest number */

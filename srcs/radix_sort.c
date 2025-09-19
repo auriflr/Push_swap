@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:53:53 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/19 15:59:37 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/19 16:48:35 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,19 @@ optimization of the sorting.*/
 /* Brings the target index to the top with the least amount (less costly) moves*/ 
 static void	greedy_ra(t_stack **a, int index)
 {
+	int	size;
+	
+	size = stack_size(a);
 	if (index == -1)
 		return ;
-	if (index <= (*a)->size / 2)
+	if (index <= size / 2)
 	{
 		while (index-- > 0)
 			rotate(a, 0);
 	}
 	else
 	{
-		index = (*a)->size - index;
+		index = size - index;
 		while (index-- > 0)
 			rev_rotate (a, 0);
 	}
@@ -62,7 +65,7 @@ static void chunk_push_b(t_stack **a, t_stack **b, int min, int max)
 
 	moves = 0;
 	mid = (min + max) / 2;
-	start_size = (*a)->size;
+	start_size = stack_size(a);
 	target_index = find_target_index(a, min, max);
 	while (target_index != -1 && moves < start_size)
 	{
@@ -89,7 +92,7 @@ void	splitnpush(t_stack **a, t_stack **b, int chunks)
 	int	chunk_size;
 	int	current_chunk;
 
-	size = (*a)->size;
+	size = stack_size(a);
 	chunk_size = size / chunks;
 	current_chunk = 0;
 	while (current_chunk < chunks)
@@ -109,7 +112,7 @@ void	ft_radixsort(t_stack **a, t_stack **b, int chunks)
 {
 	int	size;
 
-	size = (*a)->size;
+	size = stack_size(a);
 	if (size > 300)
 	{
 		if (size > 500)

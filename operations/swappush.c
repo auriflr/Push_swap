@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/19 16:07:42 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/19 17:12:33 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	swap(t_stack **stack, int flag)
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	ft_printf("calling sa!\n");
 	first_node = *stack;
 	second_node = (*stack)->next;
 	first_node->next = second_node->next;

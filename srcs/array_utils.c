@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:35:16 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/15 15:43:25 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/19 16:47:07 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	*stack_to_array(t_stack **a)
 	if (!array)
 		return (NULL);
 	i = 0;
-	current = *a;
+	current = (*a)->next;
 	while (current && i < size)
 	{
 		array[i++] = current->num;
