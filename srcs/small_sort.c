@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:29:08 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/15 16:03:10 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/19 20:08:07 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,22 @@ void	sort_three(t_stack **a)
 	n1 = (*a)->num;
 	n2 = (*a)->next->num;
 	n3 = (*a)->next->next->num;
-	if (n1 > n2 && n2 < n3 && n1 < n3)
-		swap(a, 0);
-	else if (n1 > n2 && n2 > n3)
+	if (n1 > n2 && n2 > n3)
 	{
 		swap(a, 0);
 		rev_rotate(a, 0);
 	}
+	else if (n1 > n2 && n2 < n3 && n1 < n3)
+		swap(a, 0);
 	else if (n1 > n2 && n2 < n3 && n1 > n3)
 		rotate(a, 0);
+	else if (n1 < n2 && n2 > n3 && n1 > n3)
+		rev_rotate(a, 0);
 	else if (n1 < n2 && n2 > n3 && n1 < n3)
 	{
 		swap(a, 0);
 		rotate(a, 0);
 	}
-	else if (n1 < n2 && n2 > n3 && n1 > n3)
-		rev_rotate(a, 0);
 }
 
 void	sort_four(t_stack **a, t_stack **b)
