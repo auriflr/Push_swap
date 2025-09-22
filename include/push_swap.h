@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/09/19 17:03:46 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/22 17:51:26 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int		is_sorted(t_stack **stack);
 int		is_valid(int ac, char **av);
 
 /* Stack utilitary functions */
-void	init_stack(t_stack **stack);
+t_stack	**init_stack(void);
 void	update_stack_size(t_stack **stack);
 void	free_stack(t_stack **stack);
 void	push_to_stack(t_stack **stack, int value);

@@ -6,28 +6,25 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/22 16:52:39 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/22 17:41:58 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /* initializes the stack keeping in mind the sentil node at the beginning*/ 
-void	init_stack(t_stack **stack)
+t_stack **init_stack(void)
 {
-	t_stack		*sentinel;
+    t_stack **stack;
 
-	sentinel = (t_stack *)malloc(sizeof(t_stack));
-	if (!sentinel)
-	{
-		ft_printf("Error\n");
-		exit(EXIT_FAILURE);
-	}
-	sentinel->num = 0;
-	sentinel->next = NULL;
-	sentinel->size = 0;
-	*stack = sentinel;
+    stack = (t_stack **)malloc(sizeof(t_stack *));
+    if (!stack)
+        return NULL;
+
+    *stack = NULL;  // Initialize the stack pointer to NULL (empty stack)
+    return stack;
 }
+
 
 /* frees the stack */
 void	free_stack(t_stack **stack)
@@ -68,27 +65,25 @@ void	sort_stacks(t_stack **a, t_stack **b)
 
 int		main(int ac, char **av)
 {
-	t_stack		*a;
-	t_stack		*b;
+	t_stack		**a;
+	t_stack		**b;
 
-	a = NULL;
-	b = NULL;
+	a = init_stack();
+	b = init_stack ();
 	if (!is_valid(ac, av))
 	{
 		ft_printf("Error\n");
 		exit(EXIT_FAILURE);
 	}
-	init_stack (&a);
-	init_stack (&b);
 	if (ac == 2)
 	{
-		fill_stack_string(&a, av[1]);
+		fill_stack_string(a, av[1]);
 	}
 	else
-		fill_stack_values(&a, av);
-	update_stack_size(&a);
-	sort_stacks(&a, &b);
-	free_stack(&a);
-	free_stack(&b);
+		fill_stack_values(a, av);
+	update_stack_size(a);
+	sort_stacks(a, b);
+	free_stack(a);
+	free_stack(b);
 	return (0);
 }

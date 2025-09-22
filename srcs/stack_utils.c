@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:50:02 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/22 17:15:03 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/22 17:54:55 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,39 +32,26 @@ int		get_index(int *array, int value, int size)
 this might cause issues, so keep an eye on it */
 void	push_to_stack(t_stack **stack, int value)
 {
-	t_stack	*new_last;
+	t_stack	*new_node;
 	t_stack	*current;
 
-	new_last = (t_stack *)malloc(sizeof(t_stack));
-	if (!new_last)
+	new_node = (t_stack *)malloc(sizeof(t_stack));
+	if (!new_node)
 		return ;
-	new_last->num = value;
-	new_last->next = NULL;
-	new_last->size = 1;
-	if (!*stack)
+	new_node->num = value;
+	new_node->next = NULL;
+	new_node->size = 1;
+	if (!(*stack))
 	{
-		*stack = new_last;
+		*stack = new_node;
+		new_node->size = 1;
 		return ;
 	}
 	current = *stack;
 	while (current->next != NULL)
 		current = current->next;
-	current->next = new_last;
+	current->next = new_node;
 	(*stack)->size += 1;
-	/*if (*stack == NULL)
-	{
-		*stack = new_last;
-	}
-	else
-	{
-		current = (*stack)->next;
-		while (current->next != NULL)
-		{
-			current = current->next;
-		}
-		current->next = new_last;
-		(*stack)->size += 1;
-	}*/
 }
 
 /* assigns an index to the values, smallest index to smallest number */
@@ -95,7 +82,6 @@ void	fill_stack_values(t_stack **stack, char **av)
 	while (av[i])
 	{
 		value = ft_atol(av[i]);
-		ft_printf("DEBUG: av[%d] = %s, value = %ld\n", i, av[i], value); /* to delete */
 		if (value > 2147483647 || value < -2147483648)
 			error_msg();
 		push_to_stack(stack, value);
