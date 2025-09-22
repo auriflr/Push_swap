@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/19 17:05:59 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/22 16:52:39 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	sort_stacks(t_stack **a, t_stack **b)
 	int	size;
 
 	size = stack_size (a);
-	if (is_sorted(a) || (*a)->size == 1)
+	if (is_sorted(a) || size == 1)
 		return ;
 	else if (size == 2)
 		swap(a, 0);
@@ -81,7 +81,9 @@ int		main(int ac, char **av)
 	init_stack (&a);
 	init_stack (&b);
 	if (ac == 2)
+	{
 		fill_stack_string(&a, av[1]);
+	}
 	else
 		fill_stack_values(&a, av);
 	update_stack_size(&a);

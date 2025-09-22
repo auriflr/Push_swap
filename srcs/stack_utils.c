@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:50:02 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/19 17:11:45 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/22 17:15:03 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,17 @@ void	push_to_stack(t_stack **stack, int value)
 	t_stack	*new_last;
 	t_stack	*current;
 
-	if (!stack || !(*stack))
-		return ;
 	new_last = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_last)
 		return ;
 	new_last->num = value;
 	new_last->next = NULL;
 	new_last->size = 1;
+	if (!*stack)
+	{
+		*stack = new_last;
+		return ;
+	}
 	current = *stack;
 	while (current->next != NULL)
 		current = current->next;
@@ -92,7 +95,8 @@ void	fill_stack_values(t_stack **stack, char **av)
 	while (av[i])
 	{
 		value = ft_atol(av[i]);
-		if (value > 2147483648 || value < -2147483648)
+		ft_printf("DEBUG: av[%d] = %s, value = %ld\n", i, av[i], value); /* to delete */
+		if (value > 2147483647 || value < -2147483648)
 			error_msg();
 		push_to_stack(stack, value);
 		i++;
