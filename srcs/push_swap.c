@@ -6,13 +6,13 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/22 17:41:58 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/23 00:00:43 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/* initializes the stack keeping in mind the sentil node at the beginning*/ 
+/* rewrite */ 
 t_stack **init_stack(void)
 {
     t_stack **stack;
@@ -20,8 +20,7 @@ t_stack **init_stack(void)
     stack = (t_stack **)malloc(sizeof(t_stack *));
     if (!stack)
         return NULL;
-
-    *stack = NULL;  // Initialize the stack pointer to NULL (empty stack)
+    *stack = NULL;
     return stack;
 }
 
@@ -47,6 +46,7 @@ void	sort_stacks(t_stack **a, t_stack **b)
 	int	size;
 
 	size = stack_size (a);
+	ft_printf("size: %d\n", size); /*debug*/
 	if (is_sorted(a) || size == 1)
 		return ;
 	else if (size == 2)
@@ -61,6 +61,7 @@ void	sort_stacks(t_stack **a, t_stack **b)
 		ft_radixsort(a, b, 5);
 	else
 		ft_radixsort(a, b, 11);
+	ft_printf("sorted\n"); /*debug*/
 }
 
 int		main(int ac, char **av)

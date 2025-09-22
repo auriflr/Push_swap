@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 16:10:31 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/19 16:58:41 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/22 23:52:44 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	stack_size(t_stack **stack)
 	count = 0;
 	if (!stack || !*stack)
 		return (0);
-	current = (*stack)->next;
+	current = *stack;
 	while (current)
 	{
 		count++;

@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:50:02 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/22 17:54:55 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/22 23:49:59 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ void	push_to_stack(t_stack **stack, int value)
 /* assigns an index to the values, smallest index to smallest number */
 void	assign_index_values(t_stack **stack)
 {
-	t_stack *tmp;
 	int		*array;
 	int		size;
+	t_stack *tmp;
 
 	size = (*stack)->size;
 	array = stack_to_array(stack);
-	tmp = *stack; /* or (*stack)->next if it doesn't work */
+	tmp = *stack;
 	while (tmp)
 	{
 		tmp->num = get_index(array, tmp->num, size);

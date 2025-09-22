@@ -6,14 +6,11 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:48:39 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/19 16:34:32 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/22 23:48:28 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-/* the idea is to work the max index in b, and the min index in a
-(keep explaining) */
 
 /* goes into stack a and finds the min value and assigns it the min index */
 int		find_minindex(t_stack **a)
@@ -26,7 +23,7 @@ int		find_minindex(t_stack **a)
 	i = 0;
 	min_index = 0;
 	min_value = (*a)->num; 
-	current = *a; /* or (*stack)->next, if this doesn't work */
+	current = *a;
 	while (current)
 	{
 		if (current->num < min_value)

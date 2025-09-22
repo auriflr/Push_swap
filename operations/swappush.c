@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/22 17:26:12 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/22 23:54:36 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	push(t_stack **dst_stack, t_stack **src_stack, int flag)
 {
 	t_stack		*tmp;
 
+	if (!*src_stack)
+		return ;
 	tmp = *src_stack;
 	*src_stack = (*src_stack)->next;
 	tmp->next = *dst_stack;
