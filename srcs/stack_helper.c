@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 16:10:31 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/22 23:52:44 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/23 19:39:08 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,24 @@ void	update_stack_size(t_stack **stack)
 	}
 	if (*stack)
 		(*stack)->size = count;
+}
+
+void print_stack(t_stack **stack)
+{
+    t_stack *current;
+
+    if (!stack || !(*stack))
+    {
+        ft_printf("Stack is empty\n");
+        return;
+    }
+
+    current = *stack;
+    ft_printf("Stack: ");
+    while (current)
+    {
+        ft_printf("%d ", current->num);
+        current = current->next;
+    }
+    ft_printf("\n");
 }

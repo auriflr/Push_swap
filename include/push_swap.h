@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/09/22 17:51:26 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/23 19:39:06 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void	push_to_stack(t_stack **stack, int value);
 void	assign_index_values(t_stack **stack);
 void	fill_stack_values(t_stack **stack, char **av);
 void	fill_stack_string(t_stack **a, char *arg);
+void 	print_stack(t_stack **stack);
 int		*stack_to_array(t_stack **a);
 int		stack_size(t_stack **stack);
 

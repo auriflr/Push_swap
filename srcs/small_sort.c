@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:29:08 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/22 17:51:36 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/23 19:41:34 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,14 @@ void	sort_four(t_stack **a, t_stack **b)
 	int	min_index;
 
 	min_index = find_minindex(a);
+	ft_printf("sort four minimum index: %d\n");
+	print_stack(a);
 	min_to_top(a, min_index);
+	ft_printf("sort-four called\n");
 	push(a, b, 1);
 	sort_three(a);
 	push(a, b, 0);
+	print_stack(a);
 }
 
 void	sort_five(t_stack **a, t_stack **b)

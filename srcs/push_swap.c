@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/23 00:00:43 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/23 19:44:18 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,12 @@ void	sort_stacks(t_stack **a, t_stack **b)
 		ft_radixsort(a, b, 5);
 	else
 		ft_radixsort(a, b, 11);
-	ft_printf("sorted\n"); /*debug*/
+	if (is_sorted(a))
+		ft_printf("sorted\n"); /*debug*/
+	else if (!is_sorted (a))
+		ft_printf("not sorted\n");
+	else
+		ft_printf("error\n");
 }
 
 int		main(int ac, char **av)
