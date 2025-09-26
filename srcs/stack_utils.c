@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:50:02 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/23 19:38:56 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/26 17:17:12 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	assign_index_values(t_stack **stack)
 	int		size;
 	t_stack *tmp;
 
-	size = (*stack)->size;
+	size = stack_size(stack);
 	array = stack_to_array(stack);
 	tmp = *stack;
 	while (tmp)

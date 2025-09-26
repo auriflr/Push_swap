@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/23 19:39:01 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/26 17:17:02 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	push(t_stack **dst_stack, t_stack **src_stack, int flag)
 	*src_stack = (*src_stack)->next;
 	tmp->next = *dst_stack;
 	*dst_stack = tmp;
+	print_stack(dst_stack);
 	if (flag == 0)
 		ft_printf("pa\n");
 	if (flag == 1)

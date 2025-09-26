@@ -6,13 +6,12 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/24 11:51:56 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/26 17:19:40 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-/* rewrite */ 
+ 
 t_stack **init_stack(void)
 {
     t_stack **stack;
@@ -46,7 +45,7 @@ void	sort_stacks(t_stack **a, t_stack **b)
 	int	size;
 
 	size = stack_size (a);
-	ft_printf("size: %d\n", size); /*debug*/
+	/* ft_printf("size: %d\n", size); debug*/
 	if (is_sorted(a) || size == 1)
 		return ;
 	else if (size == 2)
@@ -61,12 +60,6 @@ void	sort_stacks(t_stack **a, t_stack **b)
 		ft_radixsort(a, b, 5);
 	else
 		ft_radixsort(a, b, 11);
-	if (is_sorted(a))
-		ft_printf("sorted\n"); /*debug*/
-	else if (!is_sorted (a))
-		ft_printf("not sorted\n");
-	else
-		ft_printf("error\n");
 }
 
 int		main(int ac, char **av)
