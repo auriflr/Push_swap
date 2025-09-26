@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/09/26 17:17:17 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/26 18:04:40 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 the first node of t_stack **stack is *stack */
 typedef struct		s_stack
 {
-	int				index;
 	int				num;
 	int				size;
 	struct s_stack	*next;
@@ -37,7 +36,9 @@ void	swap(t_stack **stack, int flag);
 void	ss(t_stack **a, t_stack **b);
 
 /* push */ 
-void	push(t_stack **dst_stack, t_stack **src_stack, int flag);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+// void	push(t_stack **dst_stack, t_stack **src_stack, int flag);
 void	b_to_a(t_stack **a, t_stack **b);
 
 /* rotate */ 

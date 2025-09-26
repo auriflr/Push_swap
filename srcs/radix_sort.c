@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:53:53 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/25 09:45:53 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/26 18:10:43 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	find_target_index(t_stack **a, int min, int max)
 	t_stack	*current;
 
 	index = 0;
-	current = (*a)->next;
+	current = *a;
 	while (current)
 	{
 		if (current->num >= min && current->num <= max)
@@ -67,13 +67,14 @@ static void chunk_push_b(t_stack **a, t_stack **b, int min, int max)
 	mid = (min + max) / 2;
 	start_size = stack_size(a);
 	target_index = find_target_index(a, min, max);
+	ft_printf("Target index: %d\n", target_index);
 	while (target_index != -1 && moves < start_size)
 	{
 		target_index = find_target_index(a, min, max);
 		greedy_ra(a, target_index);
 		if ((*a)->num >= min && (*a)->num <= max) /* not sure about the conditions */
 		{
-			push(a, b, 1);
+			pb(a, b);
 			moves++;
 			if (*b && stack_size(b) > 1 && (*b)->num < mid)
 				rotate(b, 1);

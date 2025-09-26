@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:55:15 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/22 17:27:42 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/26 18:09:09 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rotate(t_stack **stack, int flag)
 	t_stack *first_node;
 	t_stack	*last_node;
 
-	if (!*stack || !(*stack)->next)
+	if (!stack || !(*stack))
 		return ;
 	first_node = *stack;
 	*stack = (*stack)->next;
@@ -46,7 +46,7 @@ void	rev_rotate(t_stack **stack, int flag)
 	t_stack		*last;
 	t_stack		*prev;
 	
-	if (!*stack || !(*stack)->next)
+	if (!stack || !(*stack))
 		return ;
 	prev = NULL;
 	last = *stack;
