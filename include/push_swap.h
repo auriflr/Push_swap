@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/09/26 18:04:40 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/27 18:27:27 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ void	pb(t_stack **a, t_stack **b);
 void	b_to_a(t_stack **a, t_stack **b);
 
 /* rotate */ 
-void	rotate(t_stack **stack, int flag);
+// void	rotate(t_stack **stack, int flag);
+void	ra (t_stack**a);
+void 	rb(t_stack **b);
 void	rr(t_stack **a, t_stack **b);
 
 /* reverse rotate */ 

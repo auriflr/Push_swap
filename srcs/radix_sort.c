@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:53:53 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/26 18:10:43 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/27 18:27:24 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	greedy_ra(t_stack **a, int index)
 	if (index <= size / 2)
 	{
 		while (index-- > 0)
-			rotate(a, 0);
+			ra(a);
 	}
 	else
 	{
@@ -72,12 +72,17 @@ static void chunk_push_b(t_stack **a, t_stack **b, int min, int max)
 	{
 		target_index = find_target_index(a, min, max);
 		greedy_ra(a, target_index);
-		if ((*a)->num >= min && (*a)->num <= max) /* not sure about the conditions */
+		if ((*a)->num >= min && (*a)->num <= max)
 		{
 			pb(a, b);
 			moves++;
+			// ft_printf("Pushed %d to b\n", (*b)->num);
 			if (*b && stack_size(b) > 1 && (*b)->num < mid)
-				rotate(b, 1);
+			{
+				rb(b);
+				ft_printf("B rotated\n");
+				print_stack(b);
+			}
 		}
 		else
 			moves++;
@@ -93,6 +98,7 @@ void	splitnpush(t_stack **a, t_stack **b, int chunks)
 	int	chunk_size;
 	int	current_chunk;
 
+	ft_printf("Chunks: %d\n", chunks);
 	size = stack_size(a);
 	chunk_size = size / chunks;
 	current_chunk = 0;

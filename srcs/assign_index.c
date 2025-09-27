@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:48:39 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/26 17:20:42 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/27 18:27:26 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void		min_to_top(t_stack **a, int min_index)
 	{
 		while (min_index-- > 0)
 		{
-			rotate(a, 0);
+			ra(a);
 			/*ft_printf("min to top, min index: %d\n", min_index);*/
 		}	
 	}
@@ -100,13 +100,13 @@ void	max_to_top(t_stack **b, int max_index)
 
 	i = 0;
 	moves = 0;
-	if (!b || stack_size(b) == 0 || max_index == -1)
+	if (!b || !(*b) || !(stack_size(b) == 0 || max_index == -1))
 		return ;
 	if (max_index <= stack_size(b) / 2)
 	{
 		while (i < max_index)
 		{
-			rotate(b, 1);
+			rb(b);
 			i++;
 		}
 	}

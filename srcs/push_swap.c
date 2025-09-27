@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/26 17:19:40 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/27 18:27:21 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ void	sort_stacks(t_stack **a, t_stack **b)
 		sort_four(a, b);
 	else if (size == 5)
 		sort_five(a, b);
+	// else if (size <= 50)
+	// 	ft_radixsort(a, b, 3);
 	else if (size <= 100)
 		ft_radixsort(a, b, 5);
 	else

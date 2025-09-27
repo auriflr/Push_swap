@@ -6,37 +6,79 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:55:15 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/26 18:09:09 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/27 12:23:34 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /* the first element becomes the last one */ 
-void	rotate(t_stack **stack, int flag)
-{
-	t_stack *first_node;
-	t_stack	*last_node;
+// void	rotate(t_stack **stack, int flag)
+// {
+// 	t_stack *first_node;
+// 	t_stack	*last_node;
 
-	if (!stack || !(*stack))
+// 	if (!stack || !(*stack))
+// 		return ;
+// 	first_node = *stack;
+// 	*stack = (*stack)->next;
+// 	first_node->next = NULL;
+// 	last_node = *stack;
+// 	while (last_node->next)
+// 		last_node = last_node->next;
+// 	last_node->next = first_node;
+// 	if (flag == 0)
+// 	{
+// 		ft_printf("ra\n");
+// 		// print_stack(stack);
+// 	}
+// 	else if (flag == 1)
+// 	{
+// 		ft_printf ("rb\n");
+// 		// print_stack(stack);
+// 	}
+// }
+
+void	ra (t_stack**a)
+{
+	t_stack	*first;
+	t_stack	*last;
+
+	if (!a || !(*a))
 		return ;
-	first_node = *stack;
-	*stack = (*stack)->next;
-	first_node->next = NULL;
-	last_node = *stack;
-	while (last_node->next)
-		last_node = last_node->next;
-	last_node->next = first_node;
-	if (flag == 0)
-		ft_printf("ra\n");
-	else if (flag == 1)
-		ft_printf ("rb\n");
+	first = *a;
+	*a = (*a)->next;
+	first->next = NULL;
+	last = *a;
+	while (last->next)
+		last = last->next;
+	last->next = first;
+	ft_printf("ra\n");
+	print_stack(a);
+}
+
+void 	rb(t_stack **b)
+{
+	t_stack	*first;
+	t_stack	*last;
+
+	if (!b || !(*b))
+		return ;
+	first = *b;
+	*b = (*b)->next;
+	first->next = NULL;
+	last = *b;
+	while (last->next)
+		last = last->next;
+	last->next = first;
+	ft_printf("rb\n");
+	print_stack(b);
 }
 
 void	rr(t_stack **a, t_stack **b)
 {
-	rotate(a, 2);
-	rotate(b, 2);
+	ra(a);
+	rb(b);
 	ft_printf("rr\n");
 }
 

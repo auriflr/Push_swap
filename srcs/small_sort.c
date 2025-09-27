@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:29:08 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/26 18:04:05 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/27 12:23:28 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ void	sort_three(t_stack **a)
 	else if (n1 > n2 && n2 < n3 && n1 < n3)
 		swap(a, 0);
 	else if (n1 > n2 && n2 < n3 && n1 > n3)
-		rotate(a, 0);
+		ra(a);
 	else if (n1 < n2 && n2 > n3 && n1 > n3)
 		rev_rotate(a, 0);
 	else if (n1 < n2 && n2 > n3 && n1 < n3)
 	{
 		swap(a, 0);
-		rotate(a, 0);
+		ra(a);
 	}
 }
 
