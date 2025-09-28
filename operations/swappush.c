@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/26 18:06:40 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/28 19:53:26 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,6 @@ void	ss(t_stack **a, t_stack **b)
 	swap(b, 2);
 	ft_printf("ss\n");
 }
-
-/* pushes the first element of the stack on top of the other stack */
-// void	push(t_stack **dst_stack, t_stack **src_stack, int flag)
-// {
-// 	t_stack		*tmp;
-
-// 	if (!*src_stack)
-// 		return ;
-// 	tmp = *src_stack;
-// 	*src_stack = (*src_stack)->next;
-// 	tmp->next = *dst_stack;
-// 	*dst_stack = tmp;
-// 	/*print_stack(dst_stack);*/
-// 	if (flag == 0)
-// 		ft_printf("pa\n");
-// 	if (flag == 1)
-// 		ft_printf("pb\n");
-// }
 
 void	pa(t_stack **a, t_stack **b)
 {
@@ -95,10 +77,10 @@ void	b_to_a(t_stack **a, t_stack **b)
 
 	while (stack_size(b) > 0)
 	{
-		max_index = find_maxindex(a);
-		max_to_top(a, max_index);
+		max_index = find_maxindex(b);
+		max_to_top(b, max_index);
 		pa(a, b);
-		if (stack_size(a) && (*a)->next && (*a)->next->next)
-			swap(a, 0);
+		// if (stack_size(a) && (*a)->next && (*a)->next->next)
+		// 	swap(a, 0);
 	}
 }

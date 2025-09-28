@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:53:53 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/27 18:27:24 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/28 12:01:49 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,8 @@ static void chunk_push_b(t_stack **a, t_stack **b, int min, int max)
 		{
 			pb(a, b);
 			moves++;
-			// ft_printf("Pushed %d to b\n", (*b)->num);
 			if (*b && stack_size(b) > 1 && (*b)->num < mid)
-			{
 				rb(b);
-				ft_printf("B rotated\n");
-				print_stack(b);
-			}
 		}
 		else
 			moves++;
@@ -98,7 +93,7 @@ void	splitnpush(t_stack **a, t_stack **b, int chunks)
 	int	chunk_size;
 	int	current_chunk;
 
-	ft_printf("Chunks: %d\n", chunks);
+	/*ft_printf("Chunks: %d\n", chunks);*/
 	size = stack_size(a);
 	chunk_size = size / chunks;
 	current_chunk = 0;

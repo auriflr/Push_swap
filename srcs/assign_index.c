@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:48:39 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/27 18:27:26 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/28 19:53:50 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	max_to_top(t_stack **b, int max_index)
 
 	i = 0;
 	moves = 0;
-	if (!b || !(*b) || !(stack_size(b) == 0 || max_index == -1))
+	if (!b || !(*b) || max_index == -1)
 		return ;
 	if (max_index <= stack_size(b) / 2)
 	{

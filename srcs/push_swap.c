@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/27 18:27:21 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/28 19:54:09 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,10 @@ int		main(int ac, char **av)
 		fill_stack_string(a, av[1]);
 	}
 	else
+	{
 		fill_stack_values(a, av);
+		assign_index_values(a);
+	}
 	update_stack_size(a);
 	sort_stacks(a, b);
 	print_stack(a);
