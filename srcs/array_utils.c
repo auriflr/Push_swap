@@ -6,11 +6,12 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:35:16 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/22 23:46:22 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/29 11:03:53 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
 /* bubblesort algorithm function */
 void	bubble_sort(int *array, int size)
 {

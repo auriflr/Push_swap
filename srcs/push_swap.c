@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/28 19:54:09 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/29 11:03:41 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	sort_stacks(t_stack **a, t_stack **b)
 	int	size;
 
 	size = stack_size (a);
-	/* ft_printf("size: %d\n", size); debug*/
 	if (is_sorted(a) || size == 1)
 		return ;
 	else if (size == 2)
@@ -56,8 +55,6 @@ void	sort_stacks(t_stack **a, t_stack **b)
 		sort_four(a, b);
 	else if (size == 5)
 		sort_five(a, b);
-	// else if (size <= 50)
-	// 	ft_radixsort(a, b, 3);
 	else if (size <= 100)
 		ft_radixsort(a, b, 5);
 	else
@@ -87,7 +84,6 @@ int		main(int ac, char **av)
 	}
 	update_stack_size(a);
 	sort_stacks(a, b);
-	print_stack(a);
 	free_stack(a);
 	free_stack(b);
 	return (0);

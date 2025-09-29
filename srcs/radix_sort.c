@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:53:53 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/28 12:01:49 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/29 11:04:55 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ void	splitnpush(t_stack **a, t_stack **b, int chunks)
 	int	chunk_size;
 	int	current_chunk;
 
-	/*ft_printf("Chunks: %d\n", chunks);*/
 	size = stack_size(a);
 	chunk_size = size / chunks;
 	current_chunk = 0;

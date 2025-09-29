@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 16:10:31 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/27 18:27:23 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/29 11:05:35 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	update_stack_size(t_stack **stack)
 
 }
 
-void print_stack(t_stack **stack)
+/*void print_stack(t_stack **stack)
 {
     t_stack *current;
 
@@ -68,4 +68,4 @@ void print_stack(t_stack **stack)
         current = current->next;
     }
     ft_printf("\n");
-}
+}*/

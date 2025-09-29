@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:48:39 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/28 19:53:50 by babyf            ###   ########.fr       */
+/*   Updated: 2025/09/29 11:04:23 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,9 @@ int		find_minindex(t_stack **a)
 			min_value = current->num;
 			min_index = i;
 		}
-		/*else*/
 		current = current->next;
 		i++;
 	}
-	/* ft_printf("min_value: %d, min_index: %d\n", min_value, min_index); */
 	return (min_index);
 }
 
@@ -54,7 +52,6 @@ void		min_to_top(t_stack **a, int min_index)
 		while (min_index-- > 0)
 		{
 			ra(a);
-			/*ft_printf("min to top, min index: %d\n", min_index);*/
 		}	
 	}
 	else
@@ -85,7 +82,6 @@ int		find_maxindex(t_stack **b)
 			max_value = current->num;
 			max_index = i;
 		}
-		/*else*/
 		current = current->next;
 		i++;
 	}
