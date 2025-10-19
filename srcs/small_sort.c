@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:29:08 by babyf             #+#    #+#             */
-/*   Updated: 2025/10/24 15:29:34 by afloris          ###   ########.fr       */
+/*   Updated: 2025/10/24 15:55:15 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ void	sort_four(t_stack **a, t_stack **b)
 	int	min_index;
 
 	min_index = find_minindex(a);
-	print_stack(a);
+	// print_stack(a);
 	min_to_top(a, min_index);
 	pb(a, b);
 	ft_printf("second sort four minimum index: %d\n", min_index);
 	sort_three(a);
 	pa(a, b);
-	print_stack(a);
-	print_stack (b);
+	// print_stack(a);
+	// print_stack (b);
 }
 
 void	sort_five(t_stack **a, t_stack **b)

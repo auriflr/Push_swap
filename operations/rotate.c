@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:55:15 by babyf             #+#    #+#             */
-/*   Updated: 2025/10/24 15:43:41 by afloris          ###   ########.fr       */
+/*   Updated: 2025/10/24 15:55:30 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ra(t_stack**a)
 		last = last->next;
 	last->next = first;
 	ft_printf("ra\n");
-	print_stack(a);
+	// print_stack(a);
 }
 
 void	rb(t_stack **b)
@@ -46,7 +46,7 @@ void	rb(t_stack **b)
 		last = last->next;
 	last->next = first;
 	ft_printf("rb\n");
-	print_stack(b);
+	// print_stack(b);
 }
 
 void	rr(t_stack **a, t_stack **b)

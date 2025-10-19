@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swappush.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
-/*   Updated: 2025/10/24 15:38:47 by afloris          ###   ########.fr       */
+/*   Updated: 2025/10/24 15:55:34 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ void	pa(t_stack **a, t_stack **b)
 	tmp->next = *a;
 	*a = tmp;
 	ft_printf("pa\n");
-	print_stack(a);
-	print_stack(b);
+	// print_stack(a);
+	// print_stack(b);
 }
 
 void	pb(t_stack **a, t_stack **b)
@@ -66,8 +66,8 @@ void	pb(t_stack **a, t_stack **b)
 	tmp->next = *b;
 	*b = tmp;
 	ft_printf("pb\n");
-	print_stack(a);
-	print_stack(b);
+	// print_stack(a);
+	// print_stack(b);
 }
 
 /* pushes every element of b to a, starting from the maximum index*/
