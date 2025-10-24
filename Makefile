@@ -13,8 +13,7 @@ LIBFT := $(LIBFT_DIR)/libft.a
 PRINTF := $(PRINTF_DIR)/libftprintf.a
 
 SRCS := $(foreach dir, $(SRCDIRS), $(wildcard $(dir)/*.c))
-OBJS := $(patsubst %.c, $(OBJDIR)/%.o, $(SRCS))
-DEPS := $(OBJS:.o=.d)
+OBJS := $(SRCS:%.c=$(OBJDIR)/%.o)
 
 all: $(LIBFT) $(PRINTF) $(NAME)
 
