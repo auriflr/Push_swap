@@ -3,26 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/09/27 18:27:27 by babyf            ###   ########.fr       */
+/*   Updated: 2025/10/24 15:21:07 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define	PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include "../libft/lib/libft.h"
-#include "../libft/lib/ft_printf.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
+# include "../libft/lib/libft.h"
+# include "../libft/lib/ft_printf.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <limits.h>
 
-/* remember that a stack is t_stack **stack, a node is t_stack *node
-the first node of t_stack **stack is *stack */
-typedef struct		s_stack
+typedef struct s_stack
 {
 	int				num;
 	int				size;
@@ -31,23 +29,21 @@ typedef struct		s_stack
 
 /* Operations and operation utils */
 
-/* swap */ 
+/* swap */
 void	swap(t_stack **stack, int flag);
 void	ss(t_stack **a, t_stack **b);
 
-/* push */ 
+/* push */
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
-// void	push(t_stack **dst_stack, t_stack **src_stack, int flag);
 void	b_to_a(t_stack **a, t_stack **b);
 
-/* rotate */ 
-// void	rotate(t_stack **stack, int flag);
-void	ra (t_stack**a);
-void 	rb(t_stack **b);
+/* rotate */
+void	ra(t_stack**a);
+void	rb(t_stack **b);
 void	rr(t_stack **a, t_stack **b);
 
-/* reverse rotate */ 
+/* reverse rotate */
 void	rev_rotate(t_stack **stack, int flag);
 void	rrr(t_stack **a, t_stack **b);
 
@@ -57,10 +53,10 @@ void	sort_four(t_stack **a, t_stack **b);
 void	sort_five(t_stack **a, t_stack **b);
 
 /* Algorithm: Radix sort*/
-void		bubble_sort(int *array, int size);
-void		splitnpush(t_stack **a, t_stack **b, int chunks);
-void		ft_radixsort(t_stack **a, t_stack **b, int chunks);
-void		sort_stacks(t_stack **a, t_stack **b);
+void	bubble_sort(int *array, int size);
+void	splitnpush(t_stack **a, t_stack **b, int chunks);
+void	ft_radixsort(t_stack **a, t_stack **b, int chunks);
+void	sort_stacks(t_stack **a, t_stack **b);
 
 /* Indexing */
 int		get_index(int *array, int value, int size);
@@ -74,7 +70,7 @@ void	error_msg(void);
 void	skip_sign(const char *str, int *i, int *sign);
 long	ft_atol(const char *str);
 int		check_args(int ac, char **av);
-int		check_string(char *arg); 
+int		check_string(char *arg);
 int		check_dup(int ac, char **av);
 int		check_sorted(int ac, char **av);
 int		final_check(int ac, char **av);
@@ -89,7 +85,6 @@ void	push_to_stack(t_stack **stack, int value);
 void	assign_index_values(t_stack **stack);
 void	fill_stack_values(t_stack **stack, char **av);
 void	fill_stack_string(t_stack **a, char *arg);
-void 	print_stack(t_stack **stack);
 int		*stack_to_array(t_stack **a);
 int		stack_size(t_stack **stack);
 

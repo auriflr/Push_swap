@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   swappush.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:23:46 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/28 19:53:26 by babyf            ###   ########.fr       */
+/*   Updated: 2025/10/24 15:38:47 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /* swaps the first two elements of the stack
-does nothing if the stack is empty */ 
+does nothing if the stack is empty */
 void	swap(t_stack **stack, int flag)
 {
 	t_stack	*first_node;
-	t_stack *second_node;
+	t_stack	*second_node;
 
 	if (!*stack || !(*stack)->next)
 		return ;
@@ -32,7 +32,7 @@ void	swap(t_stack **stack, int flag)
 		ft_printf("sb\n");
 }
 
-/* does both sa and sb */ 
+/* does both sa and sb */
 void	ss(t_stack **a, t_stack **b)
 {
 	swap(a, 2);
@@ -43,9 +43,9 @@ void	ss(t_stack **a, t_stack **b)
 void	pa(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
-	
+
 	if (!b || !(*b))
-		return;
+		return ;
 	tmp = *b;
 	*b = (*b)->next;
 	tmp->next = *a;
@@ -58,9 +58,9 @@ void	pa(t_stack **a, t_stack **b)
 void	pb(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
-	
+
 	if (!a || !(*a))
-		return;
+		return ;
 	tmp = *a;
 	*a = (*a)->next;
 	tmp->next = *b;
@@ -80,7 +80,5 @@ void	b_to_a(t_stack **a, t_stack **b)
 		max_index = find_maxindex(b);
 		max_to_top(b, max_index);
 		pa(a, b);
-		// if (stack_size(a) && (*a)->next && (*a)->next->next)
-		// 	swap(a, 0);
 	}
 }

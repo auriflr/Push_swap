@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   check_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 09:45:28 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/15 15:27:55 by babyf            ###   ########.fr       */
+/*   Updated: 2025/10/24 15:15:32 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int		is_valid(int ac, char **av)
+int	is_valid(int ac, char **av)
 {
 	if (ac < 2)
 		return (0);
@@ -30,7 +30,7 @@ int		is_valid(int ac, char **av)
 }
 
 /* checks the input string for valid characters */
-int		check_string(char *arg)
+int	check_string(char *arg)
 {
 	int	i;
 	int	dgt;
@@ -54,19 +54,17 @@ int		check_string(char *arg)
 	return (dgt);
 }
 
-
 int	is_sorted(t_stack **stack)
 {
 	t_stack	*tmp;
 
 	if (!stack || !(*stack))
 		return (1);
-	/* empty stack is considered sorted ??*/
 	tmp = *stack;
 	while (tmp->next)
 	{
 		if (tmp->num > tmp->next->num)
-			return (0); 
+			return (0);
 		tmp = tmp->next;
 	}
 	return (1);

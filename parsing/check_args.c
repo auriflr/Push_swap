@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:14:07 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/15 15:35:54 by babyf            ###   ########.fr       */
+/*   Updated: 2025/10/24 15:13:13 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 /* Two conditions:
 if it's negative and if it's not a digit, first skip, then return 0;
-if ok, return 1. */ 
-int		check_args(int ac, char **av)
+if ok, return 1. */
+int	check_args(int ac, char **av)
 {
 	int		i;
 	int		j;
@@ -40,8 +40,8 @@ int		check_args(int ac, char **av)
 }
 
 /* checks for duplicates and return 0 if one is found.
-Return 1 if not. */ 
-int		check_dup(int ac, char **av)
+Return 1 if not. */
+int	check_dup(int ac, char **av)
 {
 	int		i;
 	int		j;
@@ -62,7 +62,7 @@ int		check_dup(int ac, char **av)
 }
 
 /* checks if the sorting is correct */
-int		check_sorted(int ac, char **av)
+int	check_sorted(int ac, char **av)
 {
 	int		i;
 
@@ -77,7 +77,7 @@ int		check_sorted(int ac, char **av)
 }
 
 /* checks all three and returns 0 if there's an error, 1 if ok */
-int		final_check(int ac, char **av)
+int	final_check(int ac, char **av)
 {
 	if (!check_args(ac, av))
 		return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:53:53 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/29 11:04:55 by babyf            ###   ########.fr       */
+/*   Updated: 2025/10/24 15:28:54 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ static int	find_target_index(t_stack **a, int min, int max)
 }
 
 /* gready algorithm has if conditions that are execute only when necessary
-optimization of the sorting.*/
-/* Brings the target index to the top with the least amount (less costly) moves*/ 
+optimization of the sorting.
+Brings the target index to the top with the least amount 
+(less costly) moves*/
 static void	greedy_ra(t_stack **a, int index)
 {
 	int	size;
-	
+
 	size = stack_size(a);
 	if (index == -1)
 		return ;
@@ -56,10 +57,10 @@ static void	greedy_ra(t_stack **a, int index)
 
 /* Pushes the elements with range of min, max from A to B with 
 a greedy rotation strategy that aims to use the least amount of moves */
-static void chunk_push_b(t_stack **a, t_stack **b, int min, int max)
+static void	chunk_push_b(t_stack **a, t_stack **b, int min, int max)
 {
 	int	mid;
-	int	moves; /* counter for the moves */
+	int	moves;
 	int	start_size;
 	int	target_index;
 

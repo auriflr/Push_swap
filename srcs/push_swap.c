@@ -3,26 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/29 11:03:41 by babyf            ###   ########.fr       */
+/*   Updated: 2025/10/24 15:37:43 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
- 
-t_stack **init_stack(void)
+
+t_stack	**init_stack(void)
 {
-    t_stack **stack;
+	t_stack	**stack;
 
-    stack = (t_stack **)malloc(sizeof(t_stack *));
-    if (!stack)
-        return NULL;
-    *stack = NULL;
-    return stack;
+	stack = (t_stack **)malloc(sizeof(t_stack *));
+	if (!stack)
+		return (NULL);
+	*stack = NULL;
+	return (stack);
 }
-
 
 /* frees the stack */
 void	free_stack(t_stack **stack)
@@ -61,7 +60,7 @@ void	sort_stacks(t_stack **a, t_stack **b)
 		ft_radixsort(a, b, 11);
 }
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_stack		**a;
 	t_stack		**b;

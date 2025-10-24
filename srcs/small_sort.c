@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 09:29:08 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/29 11:05:24 by babyf            ###   ########.fr       */
+/*   Updated: 2025/10/24 15:29:34 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sort_three(t_stack **a)
 	int		n3;
 
 	if (!*a || !(*a)->next || !(*a)->next->next)
-		return;
+		return ;
 	n1 = (*a)->num;
 	n2 = (*a)->next->num;
 	n3 = (*a)->next->next->num;

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   assign_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 15:48:39 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/29 11:04:23 by babyf            ###   ########.fr       */
+/*   Updated: 2025/10/24 15:33:58 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /* goes into stack a and finds the min value and assigns it the min index */
-int		find_minindex(t_stack **a)
+int	find_minindex(t_stack **a)
 {
 	int		i;
 	int		min_value;
@@ -25,7 +25,7 @@ int		find_minindex(t_stack **a)
 	i = 0;
 	min_index = i;
 	current = *a;
-	min_value = (*a)->num; 
+	min_value = (*a)->num;
 	while (current)
 	{
 		if (current->num < min_value)
@@ -40,7 +40,7 @@ int		find_minindex(t_stack **a)
 }
 
 /* moves the min index to the top */
-void		min_to_top(t_stack **a, int min_index)
+void	min_to_top(t_stack **a, int min_index)
 {
 	int		size;
 
@@ -52,7 +52,7 @@ void		min_to_top(t_stack **a, int min_index)
 		while (min_index-- > 0)
 		{
 			ra(a);
-		}	
+		}
 	}
 	else
 	{
@@ -60,11 +60,10 @@ void		min_to_top(t_stack **a, int min_index)
 		while (min_index-- > 0)
 			rev_rotate(a, 0);
 	}
-	
 }
 
 /* finds the max_index in stack (b) */
-int		find_maxindex(t_stack **b)
+int	find_maxindex(t_stack **b)
 {
 	int		i;
 	int		max_value;
@@ -115,7 +114,6 @@ void	max_to_top(t_stack **b, int max_index)
 			i++;
 		}
 	}
-		
 }
 
 /* error message function (yes i know it doesn't belong in this file)*/

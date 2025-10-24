@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:50:02 by babyf             #+#    #+#             */
-/*   Updated: 2025/09/28 19:51:56 by babyf            ###   ########.fr       */
+/*   Updated: 2025/10/24 15:38:21 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* gets the index of a certain value and returns it if it's found.
 if it's not found, returns -1*/
-int		get_index(int *array, int value, int size)
+int	get_index(int *array, int value, int size)
 {
 	int	i;
 
@@ -59,7 +59,7 @@ void	assign_index_values(t_stack **stack)
 {
 	int		*array;
 	int		size;
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	size = stack_size(stack);
 	array = stack_to_array(stack);
@@ -90,7 +90,7 @@ void	fill_stack_values(t_stack **stack, char **av)
 	}
 }
 
-/* fills the stack with the input array */ 
+/* fills the stack with the input array */
 void	**fill_stack(t_stack **stack, char **av)
 {
 	fill_stack_values(stack, av);
