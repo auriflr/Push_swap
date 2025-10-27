@@ -6,7 +6,7 @@
 /*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:53:53 by babyf             #+#    #+#             */
-/*   Updated: 2025/10/24 15:28:54 by afloris          ###   ########.fr       */
+/*   Updated: 2025/10/27 14:27:08 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ static void	chunk_push_b(t_stack **a, t_stack **b, int min, int max)
 	mid = (min + max) / 2;
 	start_size = stack_size(a);
 	target_index = find_target_index(a, min, max);
-	ft_printf("Target index: %d\n", target_index);
 	while (target_index != -1 && moves < start_size)
 	{
 		target_index = find_target_index(a, min, max);
