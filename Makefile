@@ -1,5 +1,5 @@
 CC := gcc
-CFLAGS := -Wall -Wextra -Werror 
+CFLAGS := -Wall -Wextra -Werror
 
 SRCDIRS := srcs parsing operations
 INCDIR := include
