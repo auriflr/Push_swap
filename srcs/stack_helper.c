@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_helper.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 16:10:31 by babyf             #+#    #+#             */
-/*   Updated: 2025/10/24 16:57:59 by babyf            ###   ########.fr       */
+/*   Updated: 2025/10/27 15:48:25 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	update_stack_size(t_stack **stack)
 	}
 }
 
-/* void print_stack(t_stack **stack)
+/* void	print_stack(t_stack **stack)
 {
     t_stack *current;
 
@@ -67,4 +67,10 @@ void	update_stack_size(t_stack **stack)
         current = current->next;
     }
     ft_printf("\n");
+}
+
+void	print_node(t_stack *node)
+{
+	ft_printf("Index: %d\n", node->index);
+	ft_printf("Value: %d\n", node->num);
 } */

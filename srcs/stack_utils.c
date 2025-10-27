@@ -6,7 +6,7 @@
 /*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:50:02 by babyf             #+#    #+#             */
-/*   Updated: 2025/10/27 14:27:38 by afloris          ###   ########.fr       */
+/*   Updated: 2025/10/27 15:49:30 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	push_to_stack(t_stack **stack, int value)
 	if (!new_node)
 		return ;
 	new_node->num = value;
+	new_node->index = -1;
 	new_node->next = NULL;
 	new_node->size = 1;
 	if (!(*stack))
@@ -67,7 +68,7 @@ void	assign_index_values(t_stack **stack)
 	tmp = *stack;
 	while (tmp)
 	{
-		tmp->num = get_index(array, tmp->num, size);
+		tmp->index = get_index(array, tmp->num, size);
 		tmp = tmp->next;
 	}
 	free (array);

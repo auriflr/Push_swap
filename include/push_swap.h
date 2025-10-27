@@ -6,7 +6,7 @@
 /*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:34:05 by afloris           #+#    #+#             */
-/*   Updated: 2025/10/24 15:21:07 by afloris          ###   ########.fr       */
+/*   Updated: 2025/10/27 15:48:45 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 typedef struct s_stack
 {
 	int				num;
+	int				index;
 	int				size;
 	struct s_stack	*next;
 }					t_stack;
@@ -87,5 +88,7 @@ void	fill_stack_values(t_stack **stack, char **av);
 void	fill_stack_string(t_stack **a, char *arg);
 int		*stack_to_array(t_stack **a);
 int		stack_size(t_stack **stack);
+/* void	print_stack(t_stack **stack);
+void	print_node(t_stack *node); */
 
 #endif
