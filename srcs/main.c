@@ -6,7 +6,7 @@
 /*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:28:05 by babyf             #+#    #+#             */
-/*   Updated: 2025/10/27 15:49:14 by afloris          ###   ########.fr       */
+/*   Updated: 2025/10/27 16:37:23 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int	main(int ac, char **av)
 		ft_printf("Error\n");
 		exit(EXIT_FAILURE);
 	}
+	if (ac < 2)
+		return (0);
 	if (ac == 2)
 	{
 		fill_stack_string(a, av[1]);

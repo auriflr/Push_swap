@@ -6,7 +6,7 @@
 /*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 14:14:07 by babyf             #+#    #+#             */
-/*   Updated: 2025/10/24 15:13:13 by afloris          ###   ########.fr       */
+/*   Updated: 2025/10/27 16:29:25 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ int	check_sorted(int ac, char **av)
 /* checks all three and returns 0 if there's an error, 1 if ok */
 int	final_check(int ac, char **av)
 {
-	if (!check_args(ac, av))
+	if (check_args(ac, av) == 0)
 		return (0);
-	if (!check_dup(ac, av))
+	if (check_dup(ac, av) == 0)
 		return (0);
 	if (!check_sorted(ac, av))
 		return (0);
